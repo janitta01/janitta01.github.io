@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>植愈 · 精油使用指南</title>
+<title>芳疗配方手记</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 :root{
@@ -22,7 +22,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,253,2
 header.scrolled{box-shadow:0 1px 3px rgba(44,50,38,.06)}
 .hd{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sage-700)}
-.logo-ico{width:34px;height:34px;background:linear-gradient(135deg,var(--sage-400),var(--sage-600));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+.logo-ico{width:34px;height:34px;border-radius:50%;overflow:hidden;flex-shrink:0}
 .logo-t{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700;letter-spacing:2px}
 .logo-s{font-size:10px;color:var(--text3);letter-spacing:3px}
 nav{display:flex;gap:28px}
@@ -330,7 +330,7 @@ footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
 
 <header id="header">
 <div class="hd">
-  <a href="#" class="logo"><div class="logo-ico">🌿</div><div><div class="logo-t">植愈</div><div class="logo-s">ESSENTIAL OILS</div></div></a>
+  <a href="#" class="logo"><div class="logo-ico"><img src="essential-oils-wxapp/assets/app-icon.png" width="34" height="34" style="display:block;border-radius:50%;object-fit:cover"></div><div><div class="logo-t">芳疗配方手记</div><div class="logo-s">AROMATHERAPY FORMULARY</div></div></a>
   <nav>
     <a href="#oils">精油图鉴</a><a href="#recs">搭配推荐</a><a href="#blend">自选搭配</a><a href="#carrier">基础油</a><a href="#usage">使用方法</a><a href="#dosage">用量参考</a><a href="#safety">安全须知</a>
   </nav>
@@ -357,7 +357,7 @@ footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
 <!-- OILS DIRECTORY -->
 <section class="oils-sec" id="oils">
 <div class="ctn">
-  <div class="sh fade-in"><div class="sl">Essential Oils Directory</div><h2 class="st">60种精油图鉴</h2><p class="sd">按化学成分系统分类，点击查看完整信息</p></div>
+  <div class="sh fade-in"><div class="sl">Aromatherapy Directory</div><h2 class="st">60种精油图鉴</h2><p class="sd">按化学成分系统分类，点击查看完整信息</p></div>
   <div class="filters" id="chemFilters"></div>
   <div class="search-box"><input type="text" id="searchInput" placeholder="搜索精油名称或功效…"></div>
   <div id="oilsGrid"></div>
@@ -770,12 +770,12 @@ footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
 <footer>
 <div class="ft">
   <div class="ft-top">
-    <div class="ft-brand"><div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🌿</span><span class="lt2">植愈</span><span style="font-size:10px;color:var(--sage-400);letter-spacing:3px">ESSENTIAL OILS</span></div><p>以自然之力，疗愈身心。提供科学、安全、专业的精油使用指南。</p></div>
+    <div class="ft-brand"><div style="display:flex;align-items:center;gap:8px"><img src="essential-oils-wxapp/assets/app-icon.png" width="24" height="24" style="border-radius:50%;object-fit:cover"><span class="lt2">芳疗配方手记</span><span style="font-size:10px;color:var(--sage-400);letter-spacing:3px">AROMATHERAPY FORMULARY</span></div><p>以自然之力，调香疗愈。提供科学、安全、专业的精油使用指南。</p></div>
     <div class="ft-col"><h4>精油指南</h4><a href="#oils">精油图鉴</a><a href="#recs">搭配推荐</a><a href="#blend">自选搭配</a><a href="#dosage">用量参考</a></div>
     <div class="ft-col"><h4>了解更多</h4><a href="#safety">安全须知</a><a href="#carrier">基础油介绍</a><a href="#">扩香仪选购</a><a href="#">芳疗师推荐</a></div>
-    <div class="ft-col"><h4>关于我们</h4><a href="#">关于植愈</a><a href="#">免责声明</a><a href="#">隐私政策</a><a href="#">联系我们</a></div>
+    <div class="ft-col"><h4>关于我们</h4><a href="#">关于芳疗配方手记</a><a href="#">免责声明</a><a href="#">隐私政策</a><a href="#">联系我们</a></div>
   </div>
-  <div class="ft-bottom"><span>© 2026 植愈 · 仅供参考，不构成医疗建议</span><span>🌿</span></div>
+  <div class="ft-bottom"><span>© 2026 芳疗配方手记 · 仅供参考，不构成医疗建议</span><span>🌿</span></div>
 </div>
 </footer>
 
