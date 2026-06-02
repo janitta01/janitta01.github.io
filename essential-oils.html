@@ -298,6 +298,62 @@ footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
 .fade-in.vis{opacity:1;transform:translateY(0)}
 
+/* ====== 汉堡菜单（手机端） ====== */
+.hamburger{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;
+  background:none;border:none;cursor:pointer;
+  border-radius:10px;transition:background .2s;
+  flex-shrink:0
+}
+.hamburger:hover{background:var(--sage-50)}
+.hamburger span{
+  display:block;width:22px;height:2px;
+  background:var(--sage-700);border-radius:2px;
+  transition:transform .3s, opacity .3s
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* 移动端抽屉菜单 */
+.mobile-nav{
+  display:none;
+  position:fixed;
+  top:63px;left:0;right:0;
+  background:rgba(254,253,251,.98);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  z-index:99;
+  padding:8px 0 16px;
+  box-shadow:0 8px 24px rgba(44,50,38,.08);
+  transform:translateY(-8px);
+  opacity:0;
+  transition:transform .25s ease, opacity .25s ease;
+}
+.mobile-nav.open{
+  display:block;
+  transform:translateY(0);
+  opacity:1;
+}
+.mobile-nav a{
+  display:flex;align-items:center;
+  padding:13px 24px;
+  font-size:15px;font-weight:500;
+  color:var(--text2);text-decoration:none;
+  border-bottom:1px solid var(--sage-50);
+  transition:background .2s, color .2s;
+}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav a:hover,
+.mobile-nav a:active{background:var(--sage-50);color:var(--sage-600)}
+.mobile-nav a::before{
+  content:attr(data-icon);
+  margin-right:12px;
+  font-size:16px;
+}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
   .hero-in{grid-template-columns:1fr;gap:32px}.hero h1{font-size:38px}
@@ -313,7 +369,13 @@ footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
   .ft-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  nav{display:none}.hero h1{font-size:30px}
+  .hd{padding:12px 16px}
+  .logo-t{font-size:17px;letter-spacing:1px}
+  .logo-s{display:none}
+  nav{display:none}
+  .hamburger{display:flex}
+  .hero{margin-top:58px}
+  .hero h1{font-size:30px}
   .oils-grid{grid-template-columns:repeat(2,1fr)}
   .blend-rec-grid{grid-template-columns:1fr}
   .usage-grid{grid-template-columns:1fr}
@@ -323,6 +385,9 @@ footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
   .modal .info-grid{grid-template-columns:1fr}
   .chem-banner{flex-direction:column;gap:10px;padding:18px 20px}
   .chem-banner-ico{font-size:28px}
+}
+@media(max-width:480px){
+  .hero h1{font-size:24px}
 }
 </style>
 </head>
@@ -334,8 +399,19 @@ footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
   <nav>
     <a href="#oils">精油图鉴</a><a href="#recs">搭配推荐</a><a href="#blend">自选搭配</a><a href="#carrier">基础油</a><a href="#usage">使用方法</a><a href="#dosage">用量参考</a><a href="#safety">安全须知</a>
   </nav>
+  <button class="hamburger" id="hamburger" aria-label="打开菜单"><span></span><span></span><span></span></button>
 </div>
 </header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#oils" data-icon="🌿">精油图鉴</a>
+  <a href="#recs" data-icon="✨">搭配推荐</a>
+  <a href="#blend" data-icon="🧪">自选搭配</a>
+  <a href="#carrier" data-icon="💧">基础油</a>
+  <a href="#usage" data-icon="📖">使用方法</a>
+  <a href="#dosage" data-icon="⚖️">用量参考</a>
+  <a href="#safety" data-icon="🛡️">安全须知</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1428,6 +1504,28 @@ observeFade();
 
 // Header scroll
 window.addEventListener('scroll',()=>document.getElementById('header').classList.toggle('scrolled',window.scrollY>10));
+
+/* ====== 汉堡菜单移动端交互 ====== */
+(function(){
+  const hamburger=document.getElementById('hamburger');
+  const mobileNav=document.getElementById('mobileNav');
+  const header=document.getElementById('header');
+  hamburger.addEventListener('click',()=>{
+    const o=mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open',o);
+    hamburger.setAttribute('aria-label',o?'关闭菜单':'打开菜单');
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+  }));
+  document.addEventListener('click',e=>{
+    if(!header.contains(e.target)&&!mobileNav.contains(e.target)){
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+  });
+})();
 </script>
 </body>
 </html>
