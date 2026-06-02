@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>植愈 · 精油使用指南</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{
+  --sage-50:#f6f7f4;--sage-100:#e8ebe2;--sage-200:#d1d7c5;--sage-300:#b3bda0;
+  --sage-400:#93a17e;--sage-500:#778663;--sage-600:#5c6a4d;--sage-700:#485240;
+  --sage-800:#3b4236;--sage-900:#33382f;
+  --cream:#faf8f3;--warm-white:#fefdfb;--gold:#c9a96e;
+  --text1:#2c3226;--text2:#5c6650;--text3:#8a917e;--border:#e2e5db;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC',sans-serif;color:var(--text1);background:var(--warm-white);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,253,251,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 1px 3px rgba(44,50,38,.06)}
+.hd{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sage-700)}
+.logo-ico{width:34px;height:34px;background:linear-gradient(135deg,var(--sage-400),var(--sage-600));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+.logo-t{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700;letter-spacing:2px}
+.logo-s{font-size:10px;color:var(--text3);letter-spacing:3px}
+nav{display:flex;gap:28px}
+nav a{text-decoration:none;color:var(--text2);font-size:13px;font-weight:500;transition:color .3s;position:relative}
+nav a:hover{color:var(--sage-600)}
+nav a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+nav a:hover::after{width:100%}
+
+/* HERO */
+.hero{margin-top:62px;min-height:80vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--sage-50) 0%,var(--cream) 40%,#f0ece3 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-180px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.1) 0%,transparent 70%)}
+.hero-in{max-width:1280px;margin:0 auto;padding:72px 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:48px;line-height:1.3;font-weight:700;color:var(--sage-800);margin-bottom:16px}
+.hero h1 span{background:linear-gradient(135deg,var(--sage-500),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:32px;max-width:460px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--sage-600);color:#fff;border:none;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none}
+.btn-p:hover{background:var(--sage-700);transform:translateY(-1px);box-shadow:0 4px 16px rgba(44,50,38,.08)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:0 0;color:var(--sage-600);border:1.5px solid var(--sage-300);border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none}
+.btn-s:hover{border-color:var(--sage-500);background:var(--sage-50)}
+.hero-vis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hero-b{border-radius:18px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:transform .3s,box-shadow .3s}
+.hero-b:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(44,50,38,.08)}
+.hero-b .ic{font-size:36px}.hero-b .nm{font-size:13px;font-weight:600;color:var(--sage-800)}.hero-b .tg{font-size:10px;color:var(--text3)}
+
+/* SECTIONS */
+section{padding:88px 0}
+.ctn{max-width:1280px;margin:0 auto;padding:0 32px}
+.sh{text-align:center;margin-bottom:56px}
+.sl{display:inline-block;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
+.st{font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:var(--sage-800);margin-bottom:12px}
+.sd{font-size:15px;color:var(--text2);max-width:580px;margin:0 auto}
+
+/* OILS DIRECTORY */
+.oils-sec{background:var(--warm-white)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;justify-content:center}
+.fbtn{padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);background:#fff;font-size:12px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .3s}
+.fbtn:hover,.fbtn.on{background:var(--sage-600);color:#fff;border-color:var(--sage-600)}
+.search-box{max-width:400px;margin:0 auto 28px;position:relative}
+.search-box input{width:100%;padding:12px 20px 12px 44px;border:1.5px solid var(--border);border-radius:50px;font-size:14px;background:#fff;outline:0;transition:border-color .3s}
+.search-box input:focus{border-color:var(--sage-400)}
+.search-box::before{content:'🔍';position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:14px}
+.oils-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+/* CHEM FAMILY BANNER in Oils Section */
+.oils-chem-group{margin-bottom:48px}
+.chem-banner{border-radius:18px;padding:28px 32px;margin-bottom:24px;display:flex;align-items:flex-start;gap:20px;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.chem-banner::before{content:'';position:absolute;top:-30px;right:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.25);pointer-events:none}
+.chem-banner-ico{font-size:42px;flex-shrink:0;line-height:1;margin-top:2px}
+.chem-banner-body{flex:1;min-width:0}
+.chem-banner-title{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700;color:var(--sage-800);margin-bottom:2px;display:flex;align-items:center;gap:10px}
+.chem-banner-en{font-size:11px;font-style:italic;color:var(--text3);margin-bottom:10px;display:block}
+.chem-banner-desc{font-size:13px;color:var(--text2);line-height:1.75;margin:0}
+.chem-banner-meta{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+.chem-banner-cnt{font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.08)}
+.chem-banner-key{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px}
+.oil-c{background:#fff;border-radius:16px;padding:22px;border:1px solid var(--border);transition:all .3s;cursor:pointer;position:relative}
+.oil-c:hover{transform:translateY(-3px);box-shadow:0 4px 16px rgba(44,50,38,.08);border-color:transparent}
+.oil-c .hd2{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.oil-c .ico2{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.oil-c .nm2{font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;color:var(--sage-800)}
+.oil-c .lt{font-size:10px;color:var(--text3);font-style:italic}
+.oil-c .desc{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.oil-c .tags{display:flex;flex-wrap:wrap;gap:4px}
+.oil-c .tg2{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:500}
+.note-badge{position:absolute;top:12px;right:12px;padding:2px 8px;border-radius:8px;font-size:9px;font-weight:700;letter-spacing:.5px}
+.note-high{background:#fff3e0;color:#e67e22}
+.note-mid{background:#e8f5e9;color:#43a047}
+.note-low{background:#e8eaf6;color:#5c6bc0}
+
+/* DETAIL MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(44,50,38,.5);z-index:200;justify-content:center;align-items:center;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex}
+.modal{background:#fff;border-radius:24px;max-width:600px;width:90%;max-height:85vh;overflow-y:auto;padding:40px;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:0;background:var(--sage-50);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--text2);transition:background .3s}
+.modal-close:hover{background:var(--sage-100)}
+.modal h2{font-family:'Noto Serif SC',serif;font-size:24px;font-weight:700;color:var(--sage-800);margin-bottom:4px}
+.modal .latin{font-size:13px;color:var(--text3);font-style:italic;margin-bottom:20px}
+.modal .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.modal .info-item{background:var(--sage-50);border-radius:12px;padding:14px}
+.modal .info-item .label{font-size:11px;color:var(--text3);font-weight:600;margin-bottom:4px}
+.modal .info-item .val{font-size:13px;color:var(--sage-700);font-weight:500;line-height:1.5}
+.modal .section-label2{font-size:14px;font-weight:600;color:var(--sage-700);margin:20px 0 10px;display:flex;align-items:center;gap:6px}
+.modal .eff-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.modal .eff-tag{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.modal .pair-list{font-size:13px;color:var(--text2);line-height:1.7}
+.modal .caution{background:#fdf8f0;border:1px solid #f0e4c8;border-radius:12px;padding:14px;margin-top:16px;font-size:12px;color:#8b7355;line-height:1.6}
+.modal .caution strong{color:var(--sage-700)}
+
+/* BLENDING TOOL */
+.blend-sec{background:var(--cream)}
+.blend-tool{display:grid;grid-template-columns:300px 1fr 320px;gap:24px;min-height:600px}
+.blend-panel{background:#fff;border-radius:20px;border:1px solid var(--border);padding:24px;overflow-y:auto;max-height:700px}
+.blend-panel h3{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:600;color:var(--sage-800);margin-bottom:16px}
+.note-tabs{display:flex;gap:6px;margin-bottom:14px}
+.ntab{flex:1;padding:8px;border-radius:10px;border:1.5px solid var(--border);background:#fff;font-size:11px;font-weight:600;cursor:pointer;text-align:center;transition:all .3s}
+.ntab:hover,.ntab.on{color:#fff;border-color:transparent}
+.ntab-high.on{background:#e67e22}.ntab-mid.on{background:#43a047}.ntab-low.on{background:#5c6bc0}
+.ntab-high{color:#e67e22}.ntab-mid{color:#43a047}.ntab-low{color:#5c6bc0}
+.blend-oil-list{display:flex;flex-direction:column;gap:6px}
+.blend-oil-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:all .3s;font-size:13px}
+.blend-oil-item:hover{background:var(--sage-50)}
+.blend-oil-item.selected{background:var(--sage-100);border-color:var(--sage-300)}
+.blend-oil-item .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blend-oil-item .bname{flex:1;color:var(--sage-800);font-weight:500}
+.blend-oil-item .bnote{font-size:10px;color:var(--text3)}
+
+.blend-center{display:flex;flex-direction:column;gap:20px}
+.pyramid-wrap{background:#fff;border-radius:20px;border:1px solid var(--border);padding:32px;text-align:center}
+.pyramid-wrap h3{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:600;color:var(--sage-800);margin-bottom:24px}
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:20px}
+.pyr-level{display:flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:12px;min-height:50px;transition:all .3s;flex-wrap:wrap}
+.pyr-top{width:40%;background:#fff3e0;border:1.5px dashed #e67e22}
+.pyr-mid{width:65%;background:#e8f5e9;border:1.5px dashed #43a047}
+.pyr-base{width:90%;background:#e8eaf6;border:1.5px dashed #5c6bc0}
+.pyr-label{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:2px}
+.pyr-oils{font-size:12px;color:var(--text2);min-height:16px}
+.pyr-empty{color:var(--text3);font-style:italic;font-size:11px}
+.blend-result{background:#fff;border-radius:20px;border:1px solid var(--border);padding:24px}
+.blend-result h3{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:600;color:var(--sage-800);margin-bottom:14px}
+.selected-oils{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.sel-tag{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1.5px solid}
+.sel-tag .x{cursor:pointer;font-size:14px;line-height:1;opacity:.6}
+.sel-tag .x:hover{opacity:1}
+.blend-recipe{background:var(--sage-50);border-radius:14px;padding:20px}
+.recipe-row{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;border-bottom:1px dashed var(--border)}
+.recipe-row:last-child{border:0}
+.recipe-row .rn{color:var(--sage-700);font-weight:500;width:80px}
+.recipe-row .rd{flex:1;border-bottom:1px dashed var(--border);margin:0 4px}
+.recipe-row .rdrops{color:var(--text3);font-size:12px;white-space:nowrap}
+
+.eff-panel{background:#fff;border-radius:20px;border:1px solid var(--border);padding:24px;max-height:700px;overflow-y:auto}
+.eff-panel h3{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:600;color:var(--sage-800);margin-bottom:16px}
+.eff-cat{margin-bottom:20px}
+.eff-cat h4{font-size:13px;font-weight:600;color:var(--sage-700);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.eff-oils{display:flex;flex-wrap:wrap;gap:6px}
+.eff-oil{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;border:1.5px solid var(--border);background:#fff;transition:all .3s}
+.eff-oil:hover{border-color:var(--sage-400)}
+.eff-oil.rec{background:var(--sage-100);border-color:var(--sage-300)}
+
+/* AROMA OVERVIEW */
+.aroma-overview{display:none;margin-top:16px;padding:18px;border-radius:14px;background:linear-gradient(135deg,var(--sage-50),var(--cream));border:1px solid var(--border)}
+.aroma-overview.show{display:block}
+.aroma-title{font-size:12px;font-weight:600;color:var(--sage-700);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.aroma-notes{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.aroma-note-row{display:flex;align-items:center;gap:8px;font-size:12px}
+.aroma-note-label{padding:2px 10px;border-radius:10px;font-weight:600;font-size:10px;color:#fff;flex-shrink:0}
+.aroma-note-label.top{background:#e67e22}
+.aroma-note-label.mid{background:#43a047}
+.aroma-note-label.base{background:#5c6bc0}
+.aroma-note-names{flex:1;color:var(--text2)}
+.aroma-desc{font-size:12px;color:var(--text2);line-height:1.7;padding-top:12px;border-top:1px dashed var(--border)}
+.aroma-empty{font-size:11px;color:var(--text3);font-style:italic}
+
+/* USAGE */
+.usage-sec{background:var(--warm-white)}
+.usage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.usage-card{background:#fff;border-radius:18px;padding:28px 20px;text-align:center;border:1px solid var(--border);transition:all .3s}
+.usage-card:hover{transform:translateY(-3px);box-shadow:0 4px 16px rgba(44,50,38,.08)}
+.usage-card .uico{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px}
+.usage-card h3{font-family:'Noto Serif SC',serif;font-size:17px;font-weight:600;color:var(--sage-800);margin-bottom:8px}
+.usage-card p{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:14px}
+.usage-card ul{text-align:left;background:var(--sage-50);border-radius:10px;padding:14px}
+.usage-card li{font-size:11px;color:var(--text2);line-height:1.6;list-style:none;padding-left:14px;position:relative}
+.usage-card li::before{content:'·';position:absolute;left:4px;color:var(--gold);font-weight:700}
+
+/* DOSAGE */
+.dosage-sec{background:var(--cream)}
+.dtbl-wrap{background:#fff;border-radius:18px;border:1px solid var(--border);overflow-x:auto}
+.dtbl{width:100%;border-collapse:collapse}
+.dtbl thead{background:var(--sage-50)}
+.dtbl th{padding:14px 20px;font-size:13px;font-weight:600;color:var(--sage-700);text-align:left;border-bottom:2px solid var(--border)}
+.dtbl td{padding:12px 20px;font-size:13px;color:var(--text2);border-bottom:1px solid var(--border)}
+.dtbl tr:last-child td{border:0}
+.dtbl tr:hover td{background:var(--sage-50)}
+.dnote{margin-top:24px;background:#fdf8f0;border:1px solid #f0e4c8;border-radius:12px;padding:18px 20px;display:flex;gap:10px;align-items:flex-start}
+.dnote .ic{font-size:18px;flex-shrink:0}
+.dnote p{font-size:12px;color:#8b7355;line-height:1.6}
+.dnote strong{color:var(--sage-700)}
+
+/* SAFETY */
+.safety-sec{background:var(--sage-800);color:#fff}
+.safety-sec .sl{color:var(--gold)}.safety-sec .st{color:#fff}.safety-sec .sd{color:var(--sage-200)}
+.safety-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.safety-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px;transition:background .3s}
+.safety-card:hover{background:rgba(255,255,255,.1)}
+.safety-card h3{font-size:14px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.safety-card p{font-size:12px;color:var(--sage-200);line-height:1.6}
+
+/* FOOTER */
+footer{background:var(--sage-900);color:var(--sage-200);padding:56px 0 28px}
+.ft{max-width:1280px;margin:0 auto;padding:0 32px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft-brand .lt2{color:#fff;font-family:'Noto Serif SC',serif;font-size:18px;font-weight:700}
+.ft-brand p{font-size:12px;color:var(--sage-400);line-height:1.6;margin-top:12px}
+.ft-col h4{font-size:13px;font-weight:600;color:#fff;margin-bottom:14px}
+.ft-col a{display:block;font-size:12px;color:var(--sage-400);text-decoration:none;margin-bottom:8px;transition:color .3s}
+.ft-col a:hover{color:var(--gold)}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;font-size:11px;color:var(--sage-500)}
+
+/* CARRIER OILS */
+.carrier-sec{background:var(--warm-white)}
+.carrier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.carrier-card{background:#fff;border-radius:18px;padding:28px;border:1px solid var(--border);transition:all .3s;position:relative}
+.carrier-card:hover{transform:translateY(-3px);box-shadow:0 4px 16px rgba(44,50,38,.08);border-color:transparent}
+.carrier-card .c-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.carrier-card .c-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.carrier-card .c-name{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:600;color:var(--sage-800)}
+.carrier-card .c-latin{font-size:11px;color:var(--text3);font-style:italic}
+.carrier-card .c-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:14px}
+.carrier-card .c-props{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.c-prop{background:var(--sage-50);border-radius:10px;padding:10px 12px}
+.c-prop .cpl{font-size:10px;color:var(--text3);font-weight:600;margin-bottom:2px}
+.c-prop .cpv{font-size:12px;color:var(--sage-700);font-weight:500}
+.carrier-card .c-best{display:flex;flex-wrap:wrap;gap:5px}
+.c-best-tag{padding:3px 10px;border-radius:12px;font-size:10px;font-weight:500}
+.carrier-card .c-pace{position:absolute;top:14px;right:14px;padding:3px 10px;border-radius:8px;font-size:9px;font-weight:700;letter-spacing:.5px}
+.pace-fast{background:#e8f5e9;color:#43a047}
+.pace-mid{background:#fff3e0;color:#e67e22}
+.pace-slow{background:#e8eaf6;color:#5c6bc0}
+
+/* RECOMMENDED BLENDS */
+.blend-rec-sec{background:var(--warm-white)}
+.blend-rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.blend-rec-card{background:#fff;border-radius:20px;border:1px solid var(--border);padding:28px;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.blend-rec-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(44,50,38,.1);border-color:transparent}
+.blend-rec-card::before{content:'';position:absolute;top:-40px;right:-40px;width:100px;height:100px;border-radius:50%;opacity:.06;pointer-events:none}
+.blend-rec-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;justify-content:center}
+.bfilter-btn{padding:8px 16px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:all .3s;color:var(--text2);white-space:nowrap}
+.bfilter-btn:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.bfilter-btn.on{color:#fff;border-color:transparent}
+.bfilter-btn-all.on{background:var(--sage-600)}
+.bfilter-btn-sleep.on{background:#7c5cbf}
+.bfilter-btn-energy.on{background:#e67e22}
+.bfilter-btn-resp.on{background:#43a047}
+.bfilter-btn-mood.on{background:#f39c12}
+.bfilter-btn-pain.on{background:#e74c3c}
+.bfilter-btn-skincare.on{background:#8e24aa}
+.bfilter-btn-women.on{background:#ec407a}
+.bfilter-btn-digest.on{background:#6d4c41}
+.blend-rec-cat{grid-column:1/-1;margin:28px 0 4px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.blend-rec-cat:first-child{margin-top:0}
+.blend-rec-cat-name{font-family:'Noto Serif SC',serif;font-size:21px;font-weight:700;color:var(--sage-800);display:flex;align-items:center;gap:10px}
+.blend-rec-cat-name span{font-size:13px;font-weight:400;color:var(--text3);font-family:inherit}
+.blend-rec-cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blend-rec-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.blend-rec-ico{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.blend-rec-info{flex:1;min-width:0}
+.blend-rec-name{font-family:'Noto Serif SC',serif;font-size:17px;font-weight:700;color:var(--sage-800);line-height:1.3}
+.blend-rec-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.blend-rec-oils{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;flex:1}
+.blend-rec-oil{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1.5px solid;background:#fff}
+.blend-rec-bot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid var(--border)}
+.blend-rec-tags{display:flex;gap:6px;flex-wrap:wrap}
+.blend-rec-tag{padding:3px 10px;border-radius:10px;font-size:10px;font-weight:500;background:var(--sage-50);color:var(--sage-600)}
+.blend-rec-btn{padding:8px 18px;border-radius:20px;border:1.5px solid var(--sage-300);background:var(--sage-50);color:var(--sage-600);font-size:12px;font-weight:600;cursor:pointer;transition:all .3s;white-space:nowrap;flex-shrink:0}
+.blend-rec-btn:hover{background:var(--sage-600);color:#fff;border-color:var(--sage-600);transform:translateY(-1px)}
+.blend-rec-btn.added{background:var(--sage-100);border-color:var(--sage-400);color:var(--sage-700);pointer-events:none}
+
+/* rec aroma overview */
+.blend-rec-aroma{margin-top:14px;padding:14px 16px;border-radius:12px;background:linear-gradient(135deg,var(--sage-50),var(--cream));border:1px solid var(--border)}
+.blend-rec-aroma-title{font-size:11px;font-weight:600;color:var(--sage-600);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.blend-rec-aroma-notes{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.blend-rec-aroma-row{display:flex;align-items:center;gap:8px;font-size:11px}
+.blend-rec-aroma-label{padding:2px 8px;border-radius:8px;font-weight:600;font-size:10px;color:#fff;flex-shrink:0}
+.blend-rec-aroma-label.top{background:#e67e22}
+.blend-rec-aroma-label.mid{background:#43a047}
+.blend-rec-aroma-label.base{background:#5c6bc0}
+.blend-rec-aroma-names{flex:1;color:var(--text2)}
+.blend-rec-aroma-desc{font-size:11px;color:var(--text2);line-height:1.6;padding-top:10px;border-top:1px dashed var(--border)}
+
+/* ANIM */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.fade-in.vis{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-in{grid-template-columns:1fr;gap:32px}.hero h1{font-size:38px}
+  .oils-grid{grid-template-columns:repeat(3,1fr)}
+  .chem-banner{padding:22px 24px;gap:14px}
+  .chem-banner-ico{font-size:34px}
+  .blend-tool{grid-template-columns:1fr;min-height:auto}
+  .blend-panel{max-height:400px}
+  .usage-grid{grid-template-columns:repeat(2,1fr)}
+  .safety-grid{grid-template-columns:repeat(2,1fr)}
+  .carrier-grid{grid-template-columns:repeat(2,1fr)}
+  .blend-rec-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{display:none}.hero h1{font-size:30px}
+  .oils-grid{grid-template-columns:repeat(2,1fr)}
+  .blend-rec-grid{grid-template-columns:1fr}
+  .usage-grid{grid-template-columns:1fr}
+  .safety-grid{grid-template-columns:1fr}
+  .carrier-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .modal .info-grid{grid-template-columns:1fr}
+  .chem-banner{flex-direction:column;gap:10px;padding:18px 20px}
+  .chem-banner-ico{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+<div class="hd">
+  <a href="#" class="logo"><div class="logo-ico">🌿</div><div><div class="logo-t">植愈</div><div class="logo-s">ESSENTIAL OILS</div></div></a>
+  <nav>
+    <a href="#oils">精油图鉴</a><a href="#recs">搭配推荐</a><a href="#blend">自选搭配</a><a href="#carrier">基础油</a><a href="#usage">使用方法</a><a href="#dosage">用量参考</a><a href="#safety">安全须知</a>
+  </nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-in">
+  <div>
+    <h1>一滴自然的智慧<br><span>万般身心的疗愈</span></h1>
+    <p>精油是植物的灵魂浓缩。在这里，你将了解60种精油的化学本质、挥发性与搭配之道，让大自然的疗愈力真正为你所用。</p>
+    <div class="hero-cta"><a href="#oils" class="btn-p">探索 60 种精油 →</a><a href="#blend" class="btn-s">自选搭配</a></div>
+  </div>
+  <div class="hero-vis">
+    <div class="hero-b" style="background:linear-gradient(135deg,#f0eef6,#e4e0f0)"><div class="ic">💜</div><div class="nm">薰衣草</div><div class="tg">醇类 · 中挥发</div></div>
+    <div class="hero-b" style="background:linear-gradient(135deg,#eef5f0,#dceee1)"><div class="ic">🌿</div><div class="nm">茶树</div><div class="tg">醇类 · 高挥发</div></div>
+    <div class="hero-b" style="background:linear-gradient(135deg,#f8f4e6,#f0eace)"><div class="ic">🍋</div><div class="nm">柠檬</div><div class="tg">烯类 · 高挥发</div></div>
+    <div class="hero-b" style="background:linear-gradient(135deg,#f4efe6,#e8dfd0)"><div class="ic">🪵</div><div class="nm">乳香</div><div class="tg">烯类 · 低挥发</div></div>
+  </div>
+</div>
+</section>
+
+<!-- OILS DIRECTORY -->
+<section class="oils-sec" id="oils">
+<div class="ctn">
+  <div class="sh fade-in"><div class="sl">Essential Oils Directory</div><h2 class="st">60种精油图鉴</h2><p class="sd">按化学成分系统分类，点击查看完整信息</p></div>
+  <div class="filters" id="chemFilters"></div>
+  <div class="search-box"><input type="text" id="searchInput" placeholder="搜索精油名称或功效…"></div>
+  <div id="oilsGrid"></div>
+</div>
+</section>
+
+<!-- RECOMMENDED BLENDS -->
+<section class="blend-rec-sec" id="recs">
+<div class="ctn">
+  <div class="sh fade-in"><div class="sl">Recommended Blends</div><h2 class="st">芳香搭配推荐</h2><p class="sd">按功效分类·16款精选搭配，点击即可添加至调香工坊自由调整</p></div>
+  <div class="blend-rec-filter fade-in" id="blendRecFilter">
+    <button class="bfilter-btn bfilter-btn-all on" onclick="filterRecCategory('all')">全部</button>
+    <button class="bfilter-btn bfilter-btn-sleep" onclick="filterRecCategory('sleep')">🌙 助眠安神</button>
+    <button class="bfilter-btn bfilter-btn-energy" onclick="filterRecCategory('energy')">☀️ 提神醒脑</button>
+    <button class="bfilter-btn bfilter-btn-resp" onclick="filterRecCategory('resp')">💨 呼吸顺畅</button>
+    <button class="bfilter-btn bfilter-btn-mood" onclick="filterRecCategory('mood')">😊 情绪调节</button>
+    <button class="bfilter-btn bfilter-btn-pain" onclick="filterRecCategory('pain')">💪 疼痛舒缓</button>
+    <button class="bfilter-btn bfilter-btn-skincare" onclick="filterRecCategory('skincare')">✨ 护肤美容</button>
+    <button class="bfilter-btn bfilter-btn-women" onclick="filterRecCategory('women')">🌸 女性调理</button>
+    <button class="bfilter-btn bfilter-btn-digest" onclick="filterRecCategory('digest')">🍽️ 消化助益</button>
+  </div>
+  <div class="blend-rec-grid" id="blendRecGrid"></div>
+</div>
+</section>
+
+<!-- BLENDING TOOL -->
+<section class="blend-sec" id="blend">
+<div class="ctn">
+  <div class="sh fade-in"><div class="sl">Custom Blending</div><h2 class="st">自选搭配工坊</h2><p class="sd">选择精油，智能推荐搭配——基于挥发性分层与功效协同</p></div>
+  <div class="blend-tool">
+    <div class="blend-panel" id="blendLeft">
+      <h3>📖 选择精油</h3>
+      <div class="note-tabs">
+        <div class="ntab ntab-high on" onclick="filterNote('high')">高挥发</div>
+        <div class="ntab ntab-mid" onclick="filterNote('mid')">中挥发</div>
+        <div class="ntab ntab-low" onclick="filterNote('low')">低挥发</div>
+      </div>
+      <div class="blend-oil-list" id="blendOilList"></div>
+    </div>
+    <div class="blend-center">
+      <div class="pyramid-wrap">
+        <h3>🏔️ 调香金字塔</h3>
+        <div class="pyramid">
+          <div class="pyr-level pyr-top"><div><div class="pyr-label" style="color:#e67e22">高挥发 · 前调</div><div class="pyr-oils" id="pyrTop"><span class="pyr-empty">点击左侧选择</span></div></div></div>
+          <div class="pyr-level pyr-mid"><div><div class="pyr-label" style="color:#43a047">中挥发 · 中调</div><div class="pyr-oils" id="pyrMid"><span class="pyr-empty">点击左侧选择</span></div></div></div>
+          <div class="pyr-level pyr-base"><div><div class="pyr-label" style="color:#5c6bc0">低挥发 · 基调</div><div class="pyr-oils" id="pyrBase"><span class="pyr-empty">点击左侧选择</span></div></div></div>
+        </div>
+      </div>
+      <div class="blend-result">
+        <h3>🧪 你的配方</h3>
+        <div class="selected-oils" id="selectedOils"><span style="font-size:12px;color:var(--text3)">尚未选择精油</span></div>
+        <div class="blend-recipe" id="blendRecipe" style="display:none"></div>
+        <div class="aroma-overview" id="aromaOverview">
+          <div class="aroma-title">🌸 香气概述</div>
+          <div class="aroma-notes" id="aromaNotes"></div>
+          <div class="aroma-desc" id="aromaDesc"></div>
+        </div>
+      </div>
+    </div>
+    <div class="eff-panel" id="effPanel">
+      <h3>🎯 按功效选配</h3>
+      <div id="effCategories"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CARRIER OILS -->
+<section class="carrier-sec" id="carrier">
+<div class="ctn">
+  <div class="sh fade-in"><div class="sl">Carrier Oils</div><h2 class="st">基础油介绍</h2><p class="sd">基础油是精油的"载体"——理解不同基础油的特性，才能让精油发挥最佳效果</p></div>
+
+  <div style="text-align:center;margin-bottom:40px" class="fade-in">
+    <div style="display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center">
+      <span style="padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;background:#e8f5e9;color:#43a047">🟢 快吸收</span>
+      <span style="padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;background:#fff3e0;color:#e67e22">🟠 中等吸收</span>
+      <span style="padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;background:#e8eaf6;color:#5c6bc0">🔵 缓慢吸收</span>
+    </div>
+  </div>
+
+  <div class="carrier-grid">
+
+    <!-- 荷荷巴油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-fast">快吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f5f0e0,#ebe4c8)">🌻</div>
+        <div><div class="c-name">荷荷巴油</div><div class="c-latin">Simmondsia chinensis</div></div>
+      </div>
+      <div class="c-desc">最接近人体皮脂的基础油，实为液态植物蜡。渗透力极强，不油腻，是所有肤质的万能打底油。稳定性极高，不易氧化。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">液态蜡质，轻盈丝滑</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">极淡，几乎无味</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">5年+（极稳定）</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">快，不留油膜</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">所有肤质</span>
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">油性肌肤</span>
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">面部护理</span>
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">头发护理</span>
+      </div>
+    </div>
+
+    <!-- 甜杏仁油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-fast">快吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#fef5e7,#f8e8cc)">🌰</div>
+        <div><div class="c-name">甜杏仁油</div><div class="c-latin">Prunus dulcis</div></div>
+      </div>
+      <div class="c-desc">最经典的基础油，温和亲肤，是全身按摩的首选。富含油酸和亚油酸，滋润而不厚重，特别适合干性和敏感肌肤。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">轻淡金黄，丝滑润泽</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">微甜坚果香</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">1年</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">中等偏快</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#fef9e7;color:#b7950b">干性肌肤</span>
+        <span class="c-best-tag" style="background:#fef9e7;color:#b7950b">敏感肌肤</span>
+        <span class="c-best-tag" style="background:#fef9e7;color:#b7950b">全身按摩</span>
+        <span class="c-best-tag" style="background:#fef9e7;color:#b7950b">婴幼儿</span>
+      </div>
+    </div>
+
+    <!-- 分馏椰子油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-fast">快吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f0f8f0,#dcf0dc)">🥥</div>
+        <div><div class="c-name">分馏椰子油</div><div class="c-latin">Cocos nucifera (Fractionated)</div></div>
+      </div>
+      <div class="c-desc">精制后的液态椰子油，去除了长链脂肪酸，保持永久液态。无味、不氧化，是精油滚珠瓶和按摩的最佳载体。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">清澈透明，极度清爽</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">无味</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">无限期（不氧化）</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">快，不留油渍</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">滚珠瓶</span>
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">按摩</span>
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">油性肌肤</span>
+        <span class="c-best-tag" style="background:#e8f5e9;color:#43a047">调配保存</span>
+      </div>
+    </div>
+
+    <!-- 玫瑰果油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-mid">中等吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#fce4e4,#f5c8c8)">🌹</div>
+        <div><div class="c-name">玫瑰果油</div><div class="c-latin">Rosa rubiginosa</div></div>
+      </div>
+      <div class="c-desc">护肤界的"液体黄金"，富含维生素C和必需脂肪酸。对疤痕、色斑、干燥和衰老肌肤有卓越修复效果。建议与其他基础油混合使用。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">橙红色，略粘稠</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">淡淡植物香</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">6个月（冷藏更佳）</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">中等，需按摩助吸</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#fce4e4;color:#c0392b">疤痕修复</span>
+        <span class="c-best-tag" style="background:#fce4e4;color:#c0392b">抗衰老</span>
+        <span class="c-best-tag" style="background:#fce4e4;color:#c0392b">美白淡斑</span>
+        <span class="c-best-tag" style="background:#fce4e4;color:#c0392b">干燥肌肤</span>
+      </div>
+    </div>
+
+    <!-- 鳄梨油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-slow">缓慢吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#e8f0d8,#d0e0b8)">🥑</div>
+        <div><div class="c-name">鳄梨油</div><div class="c-latin">Persea americana</div></div>
+      </div>
+      <div class="c-desc">最滋养的基础油之一，富含维生素A、D、E和卵磷脂。质地较厚重，适合极度干燥和成熟的肌肤。常与轻薄基础油混合使用。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">深绿色，浓稠丰润</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">淡淡坚果青草香</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">1年</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">慢，滋润持久</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#e8f0d8;color:#556b2f">极干肌肤</span>
+        <span class="c-best-tag" style="background:#e8f0d8;color:#556b2f">成熟肌肤</span>
+        <span class="c-best-tag" style="background:#e8f0d8;color:#556b2f">湿疹护理</span>
+        <span class="c-best-tag" style="background:#e8f0d8;color:#556b2f">头发深层护理</span>
+      </div>
+    </div>
+
+    <!-- 橄榄油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-slow">缓慢吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f0ece0,#e0d8c0)">🫒</div>
+        <div><div class="c-name">橄榄油</div><div class="c-latin">Olea europaea</div></div>
+      </div>
+      <div class="c-desc">古老的"液体黄金"，富含油酸和维生素E。滋润力极强，但质地偏厚重。选择特级初榨（Extra Virgin）品质最佳，适合身体和头发护理。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">金黄偏绿，较浓稠</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">明显果香/草本香</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">1-2年</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">慢，留有油膜</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#f0ece0;color:#6b6b3a">身体按摩</span>
+        <span class="c-best-tag" style="background:#f0ece0;color:#6b6b3a">头发护理</span>
+        <span class="c-best-tag" style="background:#f0ece0;color:#6b6b3a">干裂肌肤</span>
+        <span class="c-best-tag" style="background:#f0ece0;color:#6b6b3a">居家易得</span>
+      </div>
+    </div>
+
+    <!-- 葡萄籽油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-fast">快吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f2e8f0,#e4d0e0)">🍇</div>
+        <div><div class="c-name">葡萄籽油</div><div class="c-latin">Vitis vinifera</div></div>
+      </div>
+      <div class="c-desc">最清爽的基础油，质地轻盈如水。富含亚油酸和原花青素，是油性和痘痘肌的最佳选择。几乎无味，不会干扰精油香气。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">淡黄近透明，极轻薄</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">几乎无味</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">6-12个月</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">极快，不油腻</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#f2e8f0;color:#7b5e7a">油性肌肤</span>
+        <span class="c-best-tag" style="background:#f2e8f0;color:#7b5e7a">痘痘肌</span>
+        <span class="c-best-tag" style="background:#f2e8f0;color:#7b5e7a">面部护理</span>
+        <span class="c-best-tag" style="background:#f2e8f0;color:#7b5e7a">敏感肌</span>
+      </div>
+    </div>
+
+    <!-- 小麦胚芽油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-mid">中等吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f8f0d8,#f0e4b8)">🌾</div>
+        <div><div class="c-name">小麦胚芽油</div><div class="c-latin">Triticum vulgare</div></div>
+      </div>
+      <div class="c-desc">天然维生素E含量最高的基础油，是卓越的抗氧化剂。质地较厚，建议10-20%比例与其他基础油混合使用，可延长配方保质期。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">橙黄色，较粘稠</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">淡淡谷物坚果香</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">1-2年</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">中等偏慢</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#f8f0d8;color:#8b7355">抗衰老</span>
+        <span class="c-best-tag" style="background:#f8f0d8;color:#8b7355">疤痕修复</span>
+        <span class="c-best-tag" style="background:#f8f0d8;color:#8b7355">抗氧化助剂</span>
+        <span class="c-best-tag" style="background:#f8f0d8;color:#8b7355">延长保质期</span>
+      </div>
+    </div>
+
+    <!-- 月见草油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-mid">中等吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f0f0e8,#e0e0d0)">🌙</div>
+        <div><div class="c-name">月见草油</div><div class="c-latin">Oenothera biennis</div></div>
+      </div>
+      <div class="c-desc">富含γ-亚麻酸（GLA），对女性荷尔蒙调节和皮肤炎症效果显著。是经前综合征和湿疹护理的专家。易氧化，需冷藏保存。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">淡黄色，细腻润泽</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">淡淡植物油香</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">6个月（需冷藏）</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">中等</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#f0f0e8;color:#6b6b3a">女性调理</span>
+        <span class="c-best-tag" style="background:#f0f0e8;color:#6b6b3a">湿疹</span>
+        <span class="c-best-tag" style="background:#f0f0e8;color:#6b6b3a">经前综合征</span>
+        <span class="c-best-tag" style="background:#f0f0e8;color:#6b6b3a">抗炎</span>
+      </div>
+    </div>
+
+    <!-- 金盏花浸泡油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-mid">中等吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#fef0d8,#fce8b0)">🌼</div>
+        <div><div class="c-name">金盏花浸泡油</div><div class="c-latin">Calendula officinalis (Infused)</div></div>
+      </div>
+      <div class="c-desc">并非冷压基础油，而是将金盏花浸泡于橄榄油中萃取而成。卓越的抗炎和皮肤修复力，是婴儿护理和敏感肌的恩物。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">金橙色，橄榄油基底</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">温暖草本花香油</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">1年</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">中等（取决于基底油）</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#fef0d8;color:#b8860b">婴幼儿</span>
+        <span class="c-best-tag" style="background:#fef0d8;color:#b8860b">尿布疹</span>
+        <span class="c-best-tag" style="background:#fef0d8;color:#b8860b">皮肤炎症</span>
+        <span class="c-best-tag" style="background:#fef0d8;color:#b8860b">敏感肌</span>
+      </div>
+    </div>
+
+    <!-- 山茶花油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-fast">快吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f8e8ec,#f0d0d8)">🌸</div>
+        <div><div class="c-name">山茶花油</div><div class="c-latin">Camellia sinensis</div></div>
+      </div>
+      <div class="c-desc">东方的美容秘方，日本艺伎的护肤秘密。富含油酸，渗透力极强，是头发和面部护理的东方珍品。质地轻盈，不油腻。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">淡黄色，轻盈丝滑</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">极淡，几乎无味</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">1-2年</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">快，清爽不腻</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#f8e8ec;color:#a05060">头发护理</span>
+        <span class="c-best-tag" style="background:#f8e8ec;color:#a05060">面部护理</span>
+        <span class="c-best-tag" style="background:#f8e8ec;color:#a05060">东方护肤</span>
+        <span class="c-best-tag" style="background:#f8e8ec;color:#a05060">所有肤质</span>
+      </div>
+    </div>
+
+    <!-- 乳木果油 -->
+    <div class="carrier-card fade-in">
+      <div class="c-pace pace-slow">缓慢吸收</div>
+      <div class="c-head">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f8f0e0,#f0e0c0)">🧈</div>
+        <div><div class="c-name">乳木果油</div><div class="c-latin">Butyrospermum parkii</div></div>
+      </div>
+      <div class="c-desc">最滋养的"固体基础油"，室温下呈固态。富含不可皂化物，对极干肌肤和皮肤屏障修复有卓越效果。适合身体霜和护唇膏制作。</div>
+      <div class="c-props">
+        <div class="c-prop"><div class="cpl">质地</div><div class="cpv">乳白色固体，体温融化</div></div>
+        <div class="c-prop"><div class="cpl">气味</div><div class="cpv">淡淡坚果脂香</div></div>
+        <div class="c-prop"><div class="cpl">保质期</div><div class="cpv">2年+</div></div>
+        <div class="c-prop"><div class="cpl">吸收速度</div><div class="cpv">慢，形成保护膜</div></div>
+      </div>
+      <div class="c-best">
+        <span class="c-best-tag" style="background:#f8f0e0;color:#8b6914">极干肌肤</span>
+        <span class="c-best-tag" style="background:#f8f0e0;color:#8b6914">护唇膏</span>
+        <span class="c-best-tag" style="background:#f8f0e0;color:#8b6914">身体霜</span>
+        <span class="c-best-tag" style="background:#f8f0e0;color:#8b6914">屏障修复</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dnote fade-in" style="margin-top:36px">
+    <div class="ic">💡</div>
+    <p><strong>选择技巧：</strong>① 面部护理首选荷荷巴油、葡萄籽油、山茶花油（清爽不堵塞毛孔）；② 身体按摩首选甜杏仁油、分馏椰子油（延展性好）；③ 修复疤痕选玫瑰果油+荷荷巴油（1:3混合）；④ 延长配方保质期可加入10%小麦胚芽油（天然维生素E抗氧化）；⑤ 婴幼儿选甜杏仁油或金盏花浸泡油（最温和安全）。</p>
+  </div>
+</div>
+</section>
+
+<!-- USAGE -->
+<section class="usage-sec" id="usage">
+<div class="ctn">
+  <div class="sh fade-in"><div class="sl">Usage Methods</div><h2 class="st">四大使用方法</h2><p class="sd">不同场景，不同方式</p></div>
+  <div class="usage-grid">
+    <div class="usage-card fade-in"><div class="uico" style="background:linear-gradient(135deg,#eef5f0,#dceee1)">🌬️</div><h3>扩香法</h3><p>通过扩香仪散发，适合改善情绪与净化空气</p><ul><li>每次3-6滴</li><li>30-60分钟/次</li><li>每日2-3次</li><li>保持通风</li></ul></div>
+    <div class="usage-card fade-in"><div class="uico" style="background:linear-gradient(135deg,#f8f4e6,#f0eace)">💆</div><h3>按摩法</h3><p>稀释于基础油后按摩，吸收最充分</p><ul><li>务必用基础油稀释</li><li>成人1-3%</li><li>儿童0.5-1%</li><li>朝心脏方向</li></ul></div>
+    <div class="usage-card fade-in"><div class="uico" style="background:linear-gradient(135deg,#e8f4f4,#d4ecec)">🛁</div><h3>泡澡法</h3><p>加入浴缸浸泡，双重吸收</p><ul><li>先用牛奶/浴盐乳化</li><li>4-6滴/次</li><li>水温37-39°C</li><li>浸泡15-20分钟</li></ul></div>
+    <div class="usage-card fade-in"><div class="uico" style="background:linear-gradient(135deg,#f0eef6,#e4e0f0)">👃</div><h3>吸入法</h3><p>直接嗅吸或蒸汽吸入，见效最快</p><ul><li>热水+2-3滴</li><li>毛巾覆盖吸入</li><li>每次5-10分钟</li><li>闭眼避免刺激</li></ul></div>
+  </div>
+</div>
+</section>
+
+<!-- DOSAGE -->
+<section class="dosage-sec" id="dosage">
+<div class="ctn">
+  <div class="sh fade-in"><div class="sl">Dosage Guide</div><h2 class="st">安全用量参考</h2></div>
+  <div class="dtbl-wrap fade-in">
+    <table class="dtbl">
+      <thead><tr><th>人群/场景</th><th>稀释浓度</th><th>10ml基础油滴数</th><th>适用说明</th></tr></thead>
+      <tbody>
+        <tr><td><strong>成人面部</strong></td><td>1%</td><td>2-3滴</td><td>面部皮肤较薄，浓度不宜过高</td></tr>
+        <tr><td><strong>成人身体</strong></td><td>2-3%</td><td>4-6滴</td><td>最常用的按摩浓度</td></tr>
+        <tr><td><strong>成人局部</strong></td><td>5%</td><td>10滴</td><td>仅限小面积点涂</td></tr>
+        <tr><td><strong>老年人</strong></td><td>1%</td><td>2-3滴</td><td>皮肤薄且敏感</td></tr>
+        <tr><td><strong>2-6岁儿童</strong></td><td>0.5%</td><td>1滴</td><td>仅限温和精油</td></tr>
+        <tr><td><strong>6-12岁儿童</strong></td><td>1%</td><td>2-3滴</td><td>避免薄荷等刺激性精油</td></tr>
+        <tr><td><strong>6月-2岁</strong></td><td>0.25%</td><td>0.5滴</td><td>仅限洋甘菊和薰衣草</td></tr>
+        <tr><td><strong>孕妇</strong></td><td>0.5-1%</td><td>1-2滴</td><td>避开玫瑰、迷迭香等</td></tr>
+        <tr><td><strong>泡澡</strong></td><td>—</td><td>4-6滴(需乳化)</td><td>先与牛奶/浴盐混合</td></tr>
+        <tr><td><strong>扩香</strong></td><td>—</td><td>3-6滴</td><td>每次30-60分钟</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dnote fade-in"><div class="ic">⚠️</div><p><strong>重要：</strong>初次使用请做皮肤贴布测试。1ml≈20滴。有基础疾病或服药者，使用前咨询专业芳疗师或医生。</p></div>
+</div>
+</section>
+
+<!-- SAFETY -->
+<section class="safety-sec" id="safety">
+<div class="ctn">
+  <div class="sh fade-in"><div class="sl">Safety First</div><h2 class="st">安全须知</h2><p class="sd">精油虽天然，但并非绝对安全</p></div>
+  <div class="safety-grid">
+    <div class="safety-card fade-in"><h3>🚫 不可内服</h3><p>除非在专业芳疗师指导下，否则绝不内服。误服可能灼伤食道、损害肝肾。</p></div>
+    <div class="safety-card fade-in"><h3>🧴 必须稀释</h3><p>纯精油不可直接涂抹皮肤。必须用基础油稀释至安全浓度。</p></div>
+    <div class="safety-card fade-in"><h3>☀️ 注意光敏</h3><p>柑橘类精油涂抹后12小时内避免日晒，否则可能灼伤或色斑。</p></div>
+    <div class="safety-card fade-in"><h3>👶 儿童孕妇</h3><p>3岁以下避免使用；孕妇需避开迷迭香、茉莉、鼠尾草等。</p></div>
+    <div class="safety-card fade-in"><h3>🐱 宠物安全</h3><p>茶树、尤加利、薄荷等对猫狗有毒。宠物在场时避免扩香。</p></div>
+    <div class="safety-card fade-in"><h3>💾 正确保存</h3><p>深色玻璃瓶，阴凉干燥处，避免阳光。远离儿童。开封后12-24月内用完。</p></div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="ft">
+  <div class="ft-top">
+    <div class="ft-brand"><div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🌿</span><span class="lt2">植愈</span><span style="font-size:10px;color:var(--sage-400);letter-spacing:3px">ESSENTIAL OILS</span></div><p>以自然之力，疗愈身心。提供科学、安全、专业的精油使用指南。</p></div>
+    <div class="ft-col"><h4>精油指南</h4><a href="#oils">精油图鉴</a><a href="#recs">搭配推荐</a><a href="#blend">自选搭配</a><a href="#dosage">用量参考</a></div>
+    <div class="ft-col"><h4>了解更多</h4><a href="#safety">安全须知</a><a href="#carrier">基础油介绍</a><a href="#">扩香仪选购</a><a href="#">芳疗师推荐</a></div>
+    <div class="ft-col"><h4>关于我们</h4><a href="#">关于植愈</a><a href="#">免责声明</a><a href="#">隐私政策</a><a href="#">联系我们</a></div>
+  </div>
+  <div class="ft-bottom"><span>© 2026 植愈 · 仅供参考，不构成医疗建议</span><span>🌿</span></div>
+</div>
+</footer>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+// ===== DATA =====
+const chemFamilies = [
+  {id:'monoterpene',name:'单萜烯类',en:'Monoterpenes',icon:'🍊',desc:'最常见的精油成分，具有提神、抗菌、增强免疫的作用。分子小、挥发快。',color:'#f8f4e6',textColor:'#a08428'},
+  {id:'monoterpAlcohol',name:'单萜醇类',en:'Monoterpene Alcohols',icon:'🌿',desc:'温和而多效，兼具抗菌与滋补。是最安全的成分家族之一，适合长期使用。',color:'#eef5f0',textColor:'#4a8a5e'},
+  {id:'sesquiterpene',name:'倍半萜烯类',en:'Sesquiterpenes',icon:'🪵',desc:'分子较大、挥发慢，深沉持久。具有抗炎、镇静、修护和情感安抚的作用。',color:'#f4efe6',textColor:'#8a7255'},
+  {id:'sesquiterpAlcohol',name:'倍半萜醇类',en:'Sesquiterpene Alcohols',icon:'🌱',desc:'温和深沉，具有卓越的免疫调节与细胞修复能力。是抗衰老的核心成分。',color:'#e8f0ec',textColor:'#3d7a63'},
+  {id:'phenol',name:'酚类',en:'Phenols',icon:'🔥',desc:'最强效的抗菌成分，刺激性强，必须极低浓度使用。是"急救型"成分。',color:'#fce8e6',textColor:'#c0392b'},
+  {id:'aldehyde',name:'醛类',en:'Aldehydes',icon:'🍋',desc:'具有抗炎、镇静、驱虫作用。气味浓烈，部分有皮肤刺激性，需低浓度使用。',color:'#fef9e7',textColor:'#b7950b'},
+  {id:'ester',name:'酯类',en:'Esters',icon:'🌸',desc:'最温和的镇静成分，抗痉挛、放松神经。气味芬芳宜人，是助眠配方的核心。',color:'#f0eef6',textColor:'#7b6da8'},
+  {id:'oxide',name:'氧化物类',en:'Oxides',icon:'💨',desc:'祛痰、通呼吸道的效果卓越。是感冒鼻塞时的首选成分。刺激性较强。',color:'#e8f4f4',textColor:'#3d8888'},
+  {id:'ketone',name:'酮类',en:'Ketones',icon:'❄️',desc:'促进细胞再生、溶解黏液、助愈伤口。部分酮类有神经毒性，需谨慎使用。',color:'#f5eef8',textColor:'#8e44ad'},
+  {id:'ether',name:'醚类',en:'Ethers',icon:'🌙',desc:'强效镇静与抗痉挛，对消化和神经系统有显著作用。需严格控制用量。',color:'#e8eaf6',textColor:'#5c6bc0'},
+  {id:'lactone',name:'内酯/香豆素类',en:'Lactones & Coumarins',icon:'🧪',desc:'具有抗凝血、镇静和细胞修复作用。部分有光敏性。数量较少但功效独特。',color:'#f2e8f0',textColor:'#8b5e83'},
+  {id:'floral',name:'花香/混合型',en:'Floral / Complex',icon:'🌹',desc:'化学成分复杂多元，兼具多种疗效。多为珍贵花香，情绪调节力卓越。',color:'#f8eff0',textColor:'#a85060'}
+];
+
+const oils = [
+  // 单萜烯类 (8)
+  {id:1,name:'柠檬',latin:'Citrus limon',chem:'monoterpene',note:'high',icon:'🍋',desc:'阳光般的清新果香，天然的情绪调节剂和净化高手。提振精神、净化空气，有助于美白淡斑。',eff:['提振情绪','净化空气','美白亮肤','促进排毒'],pair:['薰衣草','薄荷','茶树'],caution:'具有光敏性，涂抹后12小时内避免日晒',extract:'果皮（冷压法）',aroma:'清新明亮的柑橘香'},
+  {id:2,name:'甜橙',latin:'Citrus sinensis',chem:'monoterpene',note:'high',icon:'🍊',desc:'温暖甜蜜的果香，是"快乐油"。对儿童特别温和，能快速驱散阴霾情绪。',eff:['改善情绪','助眠（儿童）','促进消化','净化空间'],pair:['薰衣草','乳香','佛手柑'],caution:'轻微光敏性',extract:'果皮（冷压法）',aroma:'温暖甜美的柑橘香'},
+  {id:3,name:'佛手柑',latin:'Citrus bergamia',chem:'monoterpene',note:'high',icon:'🍏',desc:'优雅的柑橘花香，是香水工业的宠儿。卓越的抑郁缓解效果，也是消化系统的良伴。',eff:['抗抑郁','助消化','除臭','皮肤调理'],pair:['薰衣草','依兰依兰','檀香'],caution:'光敏性强（FCF型号已去除光敏成分）',extract:'果皮（冷压/蒸馏）',aroma:'柑橘花香，优雅复杂'},
+  {id:4,name:'葡萄柚',latin:'Citrus paradisi',chem:'monoterpene',note:'high',icon:'🍇',desc:'清爽活力的柑橘香，被誉为"减肥油"。能促进淋巴循环，减少水肿。',eff:['促进淋巴排毒','消水肿','提神','食欲控制'],pair:['迷迭香','杜松','甜橙'],caution:'轻微光敏性',extract:'果皮（冷压法）',aroma:'清新酸爽的柑橘香'},
+  {id:5,name:'黑胡椒',latin:'Piper nigrum',chem:'monoterpene',note:'high',icon:'🫚',desc:'温热辛辣的辛香，是消化和肌肉的"加热器"。促进血液循环，驱寒暖身。',eff:['促进消化','暖身驱寒','缓解肌肉僵硬','促循环'],pair:['迷迭香','薄荷','乳香'],caution:'皮肤刺激性较强，低浓度使用',extract:'果实（蒸馏）',aroma:'温热辛辣的辛香'},
+  {id:6,name:'松树',latin:'Pinus sylvestris',chem:'monoterpene',note:'high',icon:'🌲',desc:'清新的森林气息，是呼吸道和关节的守护者。净化力极强，适合冬季使用。',eff:['呼吸道养护','关节舒缓','净化空气','提神'],pair:['尤加利','迷迭香','薄荷'],caution:'皮肤敏感性，低浓度使用',extract:'针叶（蒸馏）',aroma:'清新干净的森林松香'},
+  {id:7,name:'丝柏',latin:'Cupressus sempervirens',chem:'monoterpene',note:'mid',icon:'🎄',desc:'深沉的木质香，是"过渡之油"——帮助面对改变与告别。对循环系统和经期调理效果显著。',eff:['改善静脉曲张','经期调理','收敛止汗','安神'],pair:['杜松','薰衣草','甜茴香'],caution:'孕妇慎用',extract:'叶片与球果（蒸馏）',aroma:'深沉烟熏的木质香'},
+  {id:8,name:'杜松',latin:'Juniperus communis',chem:'monoterpene',note:'mid',icon:'🫐',desc:'清脆的浆果香，是肾脏和排毒的专家。强大的净化力使其成为春季排毒首选。',eff:['排毒净化','利尿消水肿','皮肤净化','改善痛风'],pair:['葡萄柚','迷迭香','丝柏'],caution:'肾脏疾病患者禁用，孕妇禁用',extract:'浆果（蒸馏）',aroma:'清脆辛辣的浆果香'},
+
+  // 单萜醇类 (8)
+  {id:9,name:'薰衣草',latin:'Lavandula angustifolia',chem:'monoterpAlcohol',note:'mid',icon:'💜',desc:'最百搭的"万能油"，镇静安神效果卓越。改善睡眠首选，对烧烫伤和虫咬有舒缓作用。',eff:['助眠安神','舒缓压力','护肤修复','缓解头痛'],pair:['佛手柑','茶树','甜橙'],caution:'孕妇前期慎用，低血压者注意用量',extract:'花穗（蒸馏）',aroma:'花香草本的清甜气息'},
+  {id:10,name:'茶树',latin:'Melaleuca alternifolia',chem:'monoterpAlcohol',note:'high',icon:'🌿',desc:'天然抗菌消炎专家，对痘痘和真菌感染有显著效果。居家常备"急救油"。',eff:['抗菌消炎','祛痘净化','增强免疫','净化空气'],pair:['薰衣草','尤加利','柠檬'],caution:'不可内服，敏感肌肤需稀释',extract:'叶片（蒸馏）',aroma:'清新辛辣的药草香'},
+  {id:11,name:'玫瑰草',latin:'Cymbopogon martinii',chem:'monoterpAlcohol',note:'mid',icon:'🌾',desc:'温柔的花草香，是护肤的秘密武器。保湿效果出色，特别适合干燥和成熟肌肤。',eff:['深层保湿','平衡皮脂','抗衰老','情绪安抚'],pair:['薰衣草','玫瑰','檀香'],caution:'温和安全，适合日常使用',extract:'全草（蒸馏）',aroma:'温柔的花草玫瑰香'},
+  {id:12,name:'天竺葵',latin:'Pelargonium graveolens',chem:'monoterpAlcohol',note:'mid',icon:'🌺',desc:'玫瑰与薄荷的交汇，是"穷人的玫瑰"。出色的荷尔蒙平衡和皮肤调理作用。',eff:['平衡荷尔蒙','调节皮脂','改善经前综合征','驱蚊'],pair:['薰衣草','玫瑰','甜橙'],caution:'孕妇慎用，可能降低血糖',extract:'叶片与花（蒸馏）',aroma:'玫瑰与薄荷的混合花香'},
+  {id:13,name:'花梨木',latin:'Aniba rosaeodora',chem:'monoterpAlcohol',note:'mid',icon:'🪵',desc:'温和的木质花香，是薰衣草和茶树的完美搭档。对免疫系统和皮肤都有良好的调理作用。',eff:['免疫调理','皮肤修复','缓解疲劳','安神'],pair:['薰衣草','茶树','乳香'],caution:'因过度采伐已较稀少，注意选择可持续来源',extract:'木材（蒸馏）',aroma:'温和花香的木质调'},
+  {id:14,name:'松红梅',latin:'Leptospermum scoparium',chem:'monoterpAlcohol',note:'high',icon:'🌸',desc:'新西兰的"茶树升级版"，抗菌力是茶树的20-30倍。对耐药菌效果尤其突出。',eff:['强效抗菌','皮肤修复','呼吸道养护','免疫提升'],pair:['茶树','薰衣草','尤加利'],caution:'价格较高',extract:'叶片（蒸馏）',aroma:'温暖草本花香'},
+  {id:15,name:'马郁兰',latin:'Origanum majorana',chem:'monoterpAlcohol',note:'mid',icon:'🌿',desc:'温暖的草本香，是"拥抱之油"。缓解孤独与悲伤，对肌肉紧张和失眠有显著效果。',eff:['缓解肌肉痉挛','助眠','温暖情绪','降血压'],pair:['薰衣草','迷迭香','甜橙'],caution:'低血压者注意用量',extract:'花叶（蒸馏）',aroma:'温暖辛香的草本气息'},
+  {id:16,name:'沉香醇百里香',latin:'Thymus vulgaris CT linalool',chem:'monoterpAlcohol',note:'mid',icon:'🌱',desc:'百里香中最温和的化学型，兼具抗菌与温和性。适合儿童和敏感体质使用。',eff:['温和抗菌','免疫提升','呼吸道养护','皮肤修复'],pair:['茶树','薰衣草','尤加利'],caution:'比百里酚型温和得多，但仍需稀释',extract:'花叶（蒸馏）',aroma:'温暖草本香，比普通百里香柔和'},
+
+  // 倍半萜烯类 (5)
+  {id:17,name:'乳香',latin:'Boswellia carterii',chem:'sesquiterpene',note:'low',icon:'🪵',desc:'"精油之王"，最古老珍贵的精油之一。卓越的抗衰老和修护能力，冥想灵性的圣品。',eff:['深层抗衰','增强免疫','疤痕修复','冥想静心'],pair:['薰衣草','甜橙','檀香'],caution:'孕妇慎用，与抗凝药物有交互',extract:'树脂（蒸馏）',aroma:'温暖烟熏的树脂木质香'},
+  {id:18,name:'没药',latin:'Commiphora myrrha',chem:'sesquiterpene',note:'low',icon:'🫖',desc:'与乳香齐名的古老精油，是皮肤和口腔的修复大师。深邃的烟熏香令人沉思。',eff:['皮肤修复','口腔护理','抗炎','冥想'],pair:['乳香','檀香','薰衣草'],caution:'孕妇禁用，味道浓烈',extract:'树脂（蒸馏）',aroma:'深邃烟熏的树脂香'},
+  {id:19,name:'雪松',latin:'Cedrus atlantica',chem:'sesquiterpene',note:'low',icon:'🌲',desc:'沉稳的木质香，是"定心之油"。对呼吸系统、头皮和情绪安定都有显著效果。',eff:['呼吸道养护','头皮护理','情绪安定','驱虫'],pair:['薰衣草','迷迭香','乳香'],caution:'孕妇慎用',extract:'木材（蒸馏）',aroma:'沉稳干燥的木质香'},
+  {id:20,name:'岩兰草',latin:'Vetiveria zizanoides',chem:'sesquiterpene',note:'low',icon:'🌾',desc:'"镇定之油"，根系的力量。深沉厚重的泥土香，是极度焦虑和失眠的终极解药。',eff:['深度镇静','改善失眠','稳固情绪','皮肤修复'],pair:['薰衣草','甜橙','乳香'],caution:'气味浓重，用量宜少',extract:'根系（蒸馏）',aroma:'深沉厚重的泥土烟熏香'},
+  {id:21,name:'广藿香',latin:'Pogostemon cablin',chem:'sesquiterpene',note:'low',icon:'🍃',desc:'东方的神秘泥土香，是"回归之油"。对皮肤修复、情绪扎根和驱虫有卓越效果。越陈越香。',eff:['皮肤修复','情绪扎根','驱虫防蛀','控油收敛'],pair:['依兰依兰','檀香','佛手柑'],caution:'气味浓重，少量即可',extract:'叶片（蒸馏）',aroma:'深沉温暖的东方泥土香'},
+
+  // 倍半萜醇类 (4)
+  {id:22,name:'檀香',latin:'Santalum album',chem:'sesquiterpAlcohol',note:'low',icon:'🪵',desc:'"神圣之木"，最悠远的冥想香。对皮肤保湿、泌尿系统和深度冥想有卓越效果。',eff:['深层保湿','冥想静心','泌尿系统','抗焦虑'],pair:['乳香','薰衣草','依兰依兰'],caution:'因采伐过度价格高昂，注意选择可持续来源',extract:'心材（蒸馏）',aroma:'悠远柔和的温暖木质香'},
+  {id:23,name:'胡萝卜籽',latin:'Daucus carota',chem:'sesquiterpAlcohol',note:'mid',icon:'🥕',desc:'皮肤再生的专家，是抗衰老配方的秘密武器。对肝脏也有良好的调理作用。',eff:['皮肤再生','抗衰老','肝脏调理','排毒'],pair:['乳香','薰衣草','玫瑰草'],caution:'孕妇禁用',extract:'种子（蒸馏）',aroma:'干燥温暖的草本根香'},
+  {id:24,name:'德国洋甘菊',latin:'Matricaria chamomilla',chem:'sesquiterpAlcohol',note:'mid',icon:'🌼',desc:'深蓝色的"消炎之王"，含珍贵的天蓝烃。对过敏、炎症和情绪波动有卓越效果。',eff:['强效抗炎','抗过敏','缓解经痛','深度镇静'],pair:['罗马洋甘菊','薰衣草','玫瑰'],caution:'菊科过敏者慎用',extract:'花朵（蒸馏）',aroma:'温暖甜美的草本苹果香'},
+  {id:25,name:'甘松',latin:'Nardostachys jatamansi',chem:'sesquiterpAlcohol',note:'low',icon:'🌿',desc:'古老的灵性精油，圣经中的"哪哒香膏"。深度安神，对失眠和焦虑效果显著。',eff:['深度安神','灵性冥想','皮肤修复','抗焦虑'],pair:['乳香','檀香','薰衣草'],caution:'气味独特，价格昂贵',extract:'根系（蒸馏）',aroma:'深沉泥质的灵性木香'},
+
+  // 酚类 (3)
+  {id:26,name:'百里香(百里酚型)',latin:'Thymus vulgaris CT thymol',chem:'phenol',note:'high',icon:'🔥',desc:'最强效的抗菌精油之一，是"天然抗生素"。必须极低浓度使用，但急救效果卓越。',eff:['强效抗菌','免疫急救','驱虫','抗感染'],pair:['茶树','柠檬','迷迭香'],caution:'皮肤刺激性极强，浓度不超过1%',extract:'花叶（蒸馏）',aroma:'强烈辛辣的药草香'},
+  {id:27,name:'牛至',latin:'Origanum vulgare',chem:'phenol',note:'high',icon:'🌿',desc:'抗菌力最强的精油，是感染急救的终极武器。效力强大但刺激性也最大。',eff:['最强抗菌','抗真菌','抗寄生虫','免疫急救'],pair:['茶树','百里香','柠檬'],caution:'皮肤刺激性极强，浓度不超过0.5%，孕妇儿童禁用',extract:'花叶（蒸馏）',aroma:'强烈辛辣的草本香'},
+  {id:28,name:'丁香',latin:'Eugenia caryophyllata',chem:'phenol',note:'low',icon:'🧄',desc:'温暖的辛香，是牙痛的急救油。强大的抗菌和镇痛力，也是极佳的驱虫剂。',eff:['牙痛急救','抗菌','驱虫','暖身'],pair:['柠檬','肉桂','甜橙'],caution:'皮肤刺激性极强，浓度不超过0.5%',extract:'花苞（蒸馏）',aroma:'温暖辛辣的丁香味'},
+
+  // 醛类 (4)
+  {id:29,name:'柠檬草',latin:'Cymbopogon citratus',chem:'aldehyde',note:'high',icon:'🌿',desc:'清新强烈的柠檬草香，是驱虫和净化的高手。对肌肉酸痛和消化不良效果显著。',eff:['驱虫','缓解肌肉痛','助消化','净化空气'],pair:['薰衣草','茶树','甜橙'],caution:'皮肤刺激性，低浓度使用',extract:'全草（蒸馏）',aroma:'强烈清新的柠檬草香'},
+  {id:30,name:'柠檬香桃木',latin:'Backhousia citriodora',chem:'aldehyde',note:'high',icon:'🍋',desc:'比柠檬草更清透的柠檬香，抗菌力极强。是澳大利亚的宝藏精油。',eff:['强效抗菌','提神','呼吸道养护','驱虫'],pair:['茶树','尤加利','薰衣草'],caution:'皮肤刺激性，低浓度使用',extract:'叶片（蒸馏）',aroma:'清透明亮的柠檬香'},
+  {id:31,name:'蜜蜂花',latin:'Melissa officinalis',chem:'aldehyde',note:'mid',icon:'🐝',desc:'珍贵的" Melissa "，是焦虑和心脏的安抚者。价格昂贵但效果卓越。',eff:['抗焦虑','心脏安抚','抗病毒','助眠'],pair:['薰衣草','乳香','佛手柑'],caution:'价格极高，市场上常见掺假',extract:'全草（蒸馏）',aroma:'清新甜美的柠檬草本香'},
+  {id:32,name:'肉桂皮',latin:'Cinnamomum zeylanicum',chem:'aldehyde',note:'low',icon:'🫚',desc:'温暖甜蜜的辛香，是"暖身之油"。对循环系统和消化系统有强效暖化作用。',eff:['暖身驱寒','促循环','抗真菌','助消化'],pair:['甜橙','丁香','乳香'],caution:'皮肤刺激性极强，浓度不超过0.5%',extract:'树皮（蒸馏）',aroma:'温暖甜蜜的辛辣肉桂香'},
+
+  // 酯类 (5)
+  {id:33,name:'罗马洋甘菊',latin:'Chamaemelum nobile',chem:'ester',note:'mid',icon:'🌼',desc:'最温和的精油之一，"植物医生"。特别适合婴幼儿和敏感肌肤，抗炎镇静效果出色。',eff:['温和镇静','抗敏消炎','婴幼儿安抚','缓解经前综合征'],pair:['薰衣草','玫瑰','茶树'],caution:'菊科过敏者慎用',extract:'花朵（蒸馏）',aroma:'温暖甜美的草本苹果香'},
+  {id:34,name:'快乐鼠尾草',latin:'Salvia sclarea',chem:'ester',note:'mid',icon:'💜',desc:'温暖的草本花香，是"愉悦之油"。对经期问题和情绪波动有卓越效果，也是天然的助眠剂。',eff:['调节经期','助眠','抗抑郁','缓解经痛'],pair:['薰衣草','甜橙','天竺葵'],caution:'孕妇禁用，饮酒后使用可能做噩梦',extract:'花叶（蒸馏）',aroma:'温暖草本花香，略带茶香'},
+  {id:35,name:'罗勒',latin:'Ocimum basilicum',chem:'ester',note:'high',icon:'🌱',desc:'清新的草本香，是"思维之油"。缓解精神疲劳和头痛，对消化系统也有帮助。',eff:['提神集中','缓解头痛','助消化','缓解焦虑'],pair:['薰衣草','薄荷','迷迭香'],caution:'孕妇慎用，避免长期大量使用',extract:'花叶（蒸馏）',aroma:'清新辛辣的草本香'},
+  {id:36,name:'安息香',latin:'Styrax benzoin',chem:'ester',note:'low',icon:'🍯',desc:'温暖甜蜜的香草脂香，是"安慰之油"。对干燥皲裂的皮肤和悲伤的情绪有抚慰作用。',eff:['皮肤修复','情绪安抚','缓解咳嗽','保湿润肤'],pair:['乳香','檀香','甜橙'],caution:'粘稠，使用前需温水浸泡瓶身',extract:'树脂（溶剂萃取）',aroma:'温暖甜蜜的香草脂香'},
+  {id:37,name:'永久花',latin:'Helichrysum italicum',chem:'lactone',note:'mid',icon:'🌻',desc:'"不朽之花"，最珍贵的修复油。对疤痕、血肿和皮肤再生的效果无出其右。',eff:['疤痕修复','消散血肿','抗炎','抗衰老'],pair:['乳香','薰衣草','玫瑰'],caution:'价格极高',extract:'花朵（蒸馏）',aroma:'温暖蜂蜜般的草本花香'},
+
+  // 氧化物类 (4)
+  {id:38,name:'尤加利',latin:'Eucalyptus globulus',chem:'oxide',note:'high',icon:'🌱',desc:'呼吸系统的守护者，感冒鼻塞时的第一选择。强大的抗菌力也适合居家清洁。',eff:['缓解鼻塞','抗菌抗病毒','退烧降温','缓解肌肉痛'],pair:['薄荷','茶树','柠檬'],caution:'2岁以下儿童禁用，癫痫患者慎用',extract:'叶片（蒸馏）',aroma:'清新辛辣的樟脑气息'},
+  {id:39,name:'迷迭香',latin:'Rosmarinus officinalis',chem:'oxide',note:'high',icon:'🌿',desc:'"记忆之草"，是提神和增强记忆的经典。对脱发、肌肉酸痛和循环系统也有显著效果。',eff:['增强记忆','防脱发','缓解肌肉痛','促循环'],pair:['薄荷','薰衣草','柠檬'],caution:'孕妇禁用，癫痫患者禁用，高血压慎用',extract:'花叶（蒸馏）',aroma:'清新强烈的草本樟脑香'},
+  {id:40,name:'白千层',latin:'Melaleuca leucadendra',chem:'oxide',note:'high',icon:'🌿',desc:'温和版的尤加利，对呼吸道和关节的护理效果出色。比尤加利更温和，适合儿童。',eff:['呼吸道养护','缓解关节痛','抗菌','驱虫'],pair:['茶树','尤加利','薰衣草'],caution:'比尤加利温和，但仍需稀释',extract:'叶片（蒸馏）',aroma:'温和清新的樟脑香'},
+  {id:41,name:'绿花白千层',latin:'Melaleuca quinquenervia',chem:'oxide',note:'high',icon:'🌿',desc:'抗感染力极强，是法国医院常用的消毒精油。对呼吸道和皮肤感染效果显著。',eff:['强效抗感染','呼吸道养护','皮肤修复','驱虫'],pair:['茶树','尤加利','薰衣草'],caution:'温和安全，适合日常使用',extract:'叶片（蒸馏）',aroma:'清新草本樟脑香'},
+
+  // 酮类 (4)
+  {id:42,name:'薄荷',latin:'Mentha piperita',chem:'ketone',note:'high',icon:'🍃',desc:'清凉提神的代表，对消化不良、头痛和肌肉酸痛效果显著。办公室提神利器。',eff:['提神醒脑','缓解头痛','改善消化','退烧降温'],pair:['迷迭香','尤加利','薰衣草'],caution:'避免接触眼睛黏膜，3岁以下儿童禁用',extract:'全草（蒸馏）',aroma:'强烈清凉的薄荷味'},
+  {id:43,name:'鼠尾草',latin:'Salvia officinalis',chem:'ketone',note:'mid',icon:'🌿',desc:'强效的抗菌和荷尔蒙调节精油。比快乐鼠尾草更刺激，但效果更强。',eff:['抗菌','调节荷尔蒙','减少出汗','助消化'],pair:['迷迭香','薰衣草','柠檬'],caution:'含侧柏酮，有神经毒性，低浓度短期使用，孕妇癫痫禁用',extract:'花叶（蒸馏）',aroma:'温暖辛辣的草本香'},
+  {id:44,name:'海索草',latin:'Hyssopus officinalis',chem:'ketone',note:'mid',icon:'🌸',desc:'古老的净化之草，对呼吸道和消化系统有良好效果。在芳香疗法中用于情绪净化。',eff:['呼吸道养护','情绪净化','助消化','调节血压'],pair:['迷迭香','薰衣草','薄荷'],caution:'含松樟酮，有神经毒性，极低浓度短期使用',extract:'花叶（蒸馏）',aroma:'温暖甜美的草本樟脑香'},
+  {id:45,name:'岩蔷薇',latin:'Cistus ladaniferus',chem:'ketone',note:'low',icon:'🌷',desc:'深遂的树脂花香，是"修复之油"。对成熟肌肤、伤口和情绪创伤有卓越修复效果。',eff:['皮肤修复','抗衰老','情绪疗愈','止血'],pair:['乳香','薰衣草','檀香'],caution:'温和安全',extract:'叶片与枝条（蒸馏）',aroma:'深沉温暖的树脂琥珀香'},
+
+  // 醚类 (3)
+  {id:46,name:'甜茴香',latin:'Foeniculum vulgare',chem:'ether',note:'mid',icon:'🫒',desc:'甘甜的茴香味，是消化和女性内分泌的良伴。对胀气和经期问题效果显著。',eff:['助消化','缓解胀气','调节经期','催乳'],pair:['马郁兰','天竺葵','甜橙'],caution:'孕妇禁用，雌激素敏感者慎用',extract:'种子（蒸馏）',aroma:'甘甜温暖的茴香味'},
+  {id:47,name:'洋茴香',latin:'Pimpinella anisum',chem:'ether',note:'mid',icon:'🌟',desc:'甜美的甘草香，对呼吸系统和消化系统有温和的调理作用。',eff:['祛痰止咳','助消化','缓解胀气','催乳'],pair:['甜茴香','薄荷','薰衣草'],caution:'孕妇禁用，高浓度可能嗜睡',extract:'种子（蒸馏）',aroma:'甜美温暖的甘草香'},
+  {id:48,name:'八角茴香',latin:'Illicium verum',chem:'ether',note:'mid',icon:'⭐',desc:'温暖的辛香味，对呼吸道感染和消化不良有显著效果。也是常用的烹饪香料。',eff:['祛痰','抗菌','助消化','缓解疼痛'],pair:['甜茴香','薄荷','尤加利'],caution:'孕妇禁用，长期大量使用可能致敏',extract:'果实（蒸馏）',aroma:'温暖甜美的八角香'},
+
+  // 内酯/香豆素类 (2)
+  {id:49,name:'当归',latin:'Angelica archangelica',chem:'lactone',note:'low',icon:'🌿',desc:'古老的"天使之根"，对女性生殖系统和消化系统有显著调理作用。',eff:['调节经期','助消化','缓解焦虑','排毒'],pair:['天竺葵','快乐鼠尾草','甜橙'],caution:'光敏性，孕妇禁用',extract:'根/种子（蒸馏）',aroma:'温暖草本泥质的辛香'},
+  {id:50,name:'土木香',latin:'Inula graveolens',chem:'lactone',note:'mid',icon:'🌻',desc:'最强大的祛痰精油之一，对慢性咳嗽和黏液积聚有显著效果。',eff:['强效祛痰','慢性咳嗽','抗炎','抗过敏'],pair:['尤加利','薄荷','薰衣草'],caution:'气味浓重，低浓度使用',extract:'花朵（蒸馏）',aroma:'温暖浓烈的草本蜂蜜香'},
+
+  // 花香/混合型 (5)
+  {id:51,name:'玫瑰',latin:'Rosa damascena',chem:'floral',note:'mid',icon:'🌹',desc:'"精油之后"，最昂贵的精油之一。对女性内分泌和情绪调节有卓越效果，顶级护肤成分。',eff:['调节内分泌','抗抑郁','深层保湿','抗衰老'],pair:['乳香','薰衣草','佛手柑'],caution:'孕妇禁用，价格昂贵需辨别真伪',extract:'花瓣（蒸馏/溶剂萃取）',aroma:'浓郁馥郁的温暖花香'},
+  {id:52,name:'茉莉',latin:'Jasminum grandiflorum',chem:'floral',note:'mid',icon:'🤍',desc:'"花中之王"，是最催情和抗抑郁的花香。温暖的夜来香气息令人心醉。',eff:['抗抑郁','催情','助产','护肤'],pair:['玫瑰','檀香','佛手柑'],caution:'孕妇禁用，价格极高',extract:'花朵（溶剂萃取）',aroma:'浓郁温暖的甜蜜花香'},
+  {id:53,name:'依兰依兰',latin:'Cananga odorata',chem:'floral',note:'mid',icon:'💛',desc:'热带的"花中之花"，是情绪和感官的催化剂。对心悸、焦虑和性冷淡有显著效果。',eff:['抗焦虑','催情','降血压','平衡皮脂'],pair:['甜橙','佛手柑','檀香'],caution:'用量过多可能引起头痛',extract:'花朵（蒸馏）',aroma:'浓郁甜美的热带花香'},
+  {id:54,name:'苦橙花',latin:'Citrus aurantium',chem:'floral',note:'mid',icon:'🤍',desc:'优雅的橙花香，是"心灵之油"。对焦虑、失眠和皮肤修复有卓越效果。',eff:['抗焦虑','助眠','皮肤修复','抗抑郁'],pair:['薰衣草','乳香','佛手柑'],caution:'温和安全，适合日常使用',extract:'花朵（蒸馏）',aroma:'优雅清新的橙花香'},
+  {id:55,name:'桂花',latin:'Osmanthus fragrans',chem:'floral',note:'mid',icon:'🧡',desc:'东方的甜蜜花香，是"幸福之油"。独特的杏桃花香令人愉悦，对情绪有温和的提振作用。',eff:['愉悦情绪','护肤','缓解紧张','提振精神'],pair:['甜橙','佛手柑','薰衣草'],caution:'温和安全',extract:'花朵（溶剂萃取）',aroma:'甜蜜温暖的杏桃花香'},
+
+  // 新增5种精油 (56-60)
+  {id:56,name:'罗文莎叶',latin:'Ravensara aromatica',chem:'oxide',note:'high',icon:'🌿',desc:'马达加斯加的"万能油"，被誉为当地的茶树。兼具强效抗病毒与温和性，是流感季节的防护首选。',eff:['抗病毒','增强免疫','呼吸道养护','净化空气'],pair:['尤加利','茶树','薰衣草'],caution:'温和安全，适合全家使用',extract:'叶片（蒸馏）',aroma:'清新温和的樟脑草本香'},
+  {id:57,name:'香蜂草',latin:'Melissa officinalis CT citral',chem:'aldehyde',note:'mid',icon:'🐝',desc:'细腻的柠檬蜂蜜香，是焦虑与心悸的温柔抚慰者。对带状疱疹病毒有显著的抗病毒效果，情绪疗愈力卓越。',eff:['抗焦虑','抗病毒','心脏安抚','助眠'],pair:['薰衣草','罗马洋甘菊','乳香'],caution:'价格较高，市场上常见掺假，需辨别真伪',extract:'全草（蒸馏）',aroma:'清甜柔和的柠檬蜂蜜香'},
+  {id:58,name:'古巴香脂',latin:'Copaifera officinalis',chem:'sesquiterpene',note:'low',icon:'🌳',desc:'南美亚马逊的古老树脂精油，消炎能力极强。对皮肤修复、关节炎和呼吸道慢性炎症有深层调理作用。',eff:['深层抗炎','皮肤修复','关节养护','呼吸道调理'],pair:['乳香','没药','薰衣草'],caution:'孕妇慎用，气味浓重建议小量使用',extract:'树脂（蒸馏）',aroma:'温暖辛辣的木质树脂香'},
+  {id:59,name:'穗花薰衣草',latin:'Lavandula latifolia',chem:'oxide',note:'high',icon:'💙',desc:'薰衣草中富含桉油醇的化学型，比真正薰衣草更具提神与呼吸道功效。处理昆虫咬伤和轻度烧烫伤效果出色。',eff:['通鼻塞','缓解虫咬','提神','皮肤修复'],pair:['尤加利','茶树','真正薰衣草'],caution:'不适合助眠（反而提神），避免睡前使用',extract:'花穗（蒸馏）',aroma:'清新略辛的草本薰衣草香'},
+  {id:60,name:'芫荽籽',latin:'Coriandrum sativum',chem:'monoterpAlcohol',note:'mid',icon:'🌱',desc:'温暖辛甜的香料精油，是消化系统与神经系统的双重守护者。舒缓肠胃痉挛，缓解疲劳与神经紧张，气味令人愉悦。',eff:['助消化','缓解肠痉挛','舒缓神经','温和抗菌'],pair:['甜茴香','柠檬','姜'],caution:'温和安全，孕妇适量使用',extract:'种子（蒸馏）',aroma:'温暖辛甜的香料草本香'}
+];
+
+// Efficacy categories for blending recommendations
+const effCategories = [
+  {id:'sleep',name:'🌙 助眠安神',oils:[9,33,34,15,20,54,24,25,31,51,57]},
+  {id:'immunity',name:'🛡️ 免疫提升',oils:[10,14,26,27,38,13,17,41,16,6,56,57]},
+  {id:'skincare',name:'✨ 护肤美容',oils:[22,17,51,52,37,11,24,23,45,9,21,36,58]},
+  {id:'mood',name:'☀️ 情绪调节',oils:[1,2,3,53,51,54,55,31,34,9,4,57]},
+  {id:'pain',name:'💪 疼痛舒缓',oils:[42,39,29,5,38,15,44,9,45,58,60]},
+  {id:'resp',name:'💨 呼吸系统',oils:[38,39,40,41,6,50,42,10,14,56,59]},
+  {id:'digest',name:'🍽️ 消化助益',oils:[5,46,47,48,35,29,15,3,60]},
+  {id:'women',name:'🌸 女性调理',oils:[51,53,12,34,24,33,7,46,52]},
+  {id:'detox',name:'💧 排毒净化',oils:[8,4,1,23,29,7,21]},
+  {id:'focus',name:'🧠 专注提神',oils:[39,42,35,1,3,4,38,6,59]}
+];
+
+// ===== RENDER =====
+const noteNames = {high:'高挥发',mid:'中挥发',low:'低挥发'};
+const noteColors = {high:'#e67e22',mid:'#43a047',low:'#5c6bc0'};
+let selectedOils = [];
+let currentChemFilter = 'all';
+let currentNoteFilter = 'high';
+
+function getChemById(id){ return chemFamilies.find(c=>c.id===id); }
+
+// Render chemical filters
+document.getElementById('chemFilters').innerHTML = `<button class="fbtn on" onclick="filterByChem('all')">全部</button>` +
+  chemFamilies.map(c=>`<button class="fbtn" onclick="filterByChem('${c.id}')">${c.icon} ${c.name}</button>`).join('');
+
+function filterByChem(chem){
+  currentChemFilter = chem;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
+  event.target.classList.add('on');
+  renderOils();
+}
+
+function renderChemBanner(cf, oilCount){
+  const bgStyle = `background:linear-gradient(135deg,${cf.color},${cf.color}dd)`;
+  const keywordMap = {
+    monoterpene:'提神 · 抗菌 · 增强免疫 · 挥发快',
+    monoterpAlcohol:'温和 · 安全 · 抗菌 · 滋补',
+    sesquiterpene:'抗炎 · 镇静 · 修护 · 情感安抚',
+    sesquiterpAlcohol:'免疫调节 · 细胞修复 · 抗衰老',
+    phenol:'强效抗菌 · 刺激性强 · 低浓度使用',
+    aldehyde:'抗炎 · 镇静 · 驱虫 · 低浓度使用',
+    ester:'镇静 · 抗痉挛 · 助眠 · 温和',
+    oxide:'祛痰 · 通鼻塞 · 呼吸道首选',
+    ketone:'细胞再生 · 溶黏液 · 谨慎使用',
+    ether:'镇静 · 消化 · 神经系统 · 严格控量',
+    lactone:'抗凝 · 镇静 · 细胞修复 · 部分光敏',
+    floral:'情绪调节 · 成分复杂 · 珍贵花香'
+  };
+  return `<div class="chem-banner fade-in" style="${bgStyle}">
+    <div class="chem-banner-ico">${cf.icon}</div>
+    <div class="chem-banner-body">
+      <div class="chem-banner-title" style="color:${cf.textColor}">${cf.name}<span style="font-size:12px;font-weight:400;color:${cf.textColor};opacity:.7;font-family:sans-serif;font-style:italic">${cf.en}</span></div>
+      <p class="chem-banner-desc" style="color:${cf.textColor};opacity:.85">${cf.desc}</p>
+      <div class="chem-banner-meta">
+        <span class="chem-banner-cnt" style="color:${cf.textColor}">共 ${oilCount} 种精油</span>
+        <span class="chem-banner-key" style="color:${cf.textColor};opacity:.7">🔑 ${keywordMap[cf.id]||''}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderOils(){
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  let filtered = oils;
+  if(currentChemFilter!=='all') filtered = filtered.filter(o=>o.chem===currentChemFilter);
+  if(q) filtered = filtered.filter(o=>o.name.includes(q)||o.latin.toLowerCase().includes(q)||o.eff.some(e=>e.includes(q)));
+
+  // Group oils by chem family, preserving chemFamilies order
+  const chemsInResult = [];
+  const grouped = {};
+  filtered.forEach(o=>{
+    if(!grouped[o.chem]){ grouped[o.chem]=[]; chemsInResult.push(o.chem); }
+    grouped[o.chem].push(o);
+  });
+  // Sort by chemFamilies order
+  const orderedChems = chemFamilies.map(c=>c.id).filter(id=>grouped[id]);
+
+  if(orderedChems.length === 0){
+    document.getElementById('oilsGrid').innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text3)">未找到匹配的精油</div>`;
+    observeFade();
+    return;
+  }
+
+  let html = '';
+  orderedChems.forEach(chemId=>{
+    const cf = getChemById(chemId);
+    const group = grouped[chemId];
+    const oilCards = group.map(o=>`<div class="oil-c fade-in" onclick="openModal(${o.id})">
+      <div class="note-badge note-${o.note}">${noteNames[o.note]}</div>
+      <div class="hd2">
+        <div class="ico2" style="background:${cf.color}">${o.icon}</div>
+        <div><div class="nm2">${o.name}</div><div class="lt">${o.latin}</div></div>
+      </div>
+      <div class="desc">${o.desc}</div>
+      <div class="tags">${o.eff.slice(0,3).map(e=>`<span class="tg2" style="background:${cf.color};color:${cf.textColor}">${e}</span>`).join('')}</div>
+    </div>`).join('');
+    html += `<div class="oils-chem-group">
+      ${renderChemBanner(cf, group.length)}
+      <div class="oils-grid">${oilCards}</div>
+    </div>`;
+  });
+
+  document.getElementById('oilsGrid').innerHTML = html;
+  observeFade();
+}
+document.getElementById('searchInput').addEventListener('input', renderOils);
+
+// Modal
+function openModal(id){
+  const o = oils.find(x=>x.id===id);
+  const cf = getChemById(o.chem);
+  document.getElementById('modalContent').innerHTML = `
+    <h2>${o.icon} ${o.name}</h2>
+    <div class="latin">${o.latin}</div>
+    <div class="info-grid">
+      <div class="info-item"><div class="label">化学家族</div><div class="val">${cf.icon} ${cf.name}</div></div>
+      <div class="info-item"><div class="label">挥发性</div><div class="val" style="color:${noteColors[o.note]};font-weight:700">${noteNames[o.note]}（${o.note==='high'?'前调':o.note==='mid'?'中调':'基调'}）</div></div>
+      <div class="info-item"><div class="label">提取部位</div><div class="val">${o.extract}</div></div>
+      <div class="info-item"><div class="label">香气特征</div><div class="val">${o.aroma}</div></div>
+    </div>
+    <div class="section-label2">📋 核心功效</div>
+    <div class="eff-list">${o.eff.map(e=>`<span class="eff-tag" style="background:${cf.color};color:${cf.textColor}">${e}</span>`).join('')}</div>
+    <div class="section-label2">🤝 搭配推荐</div>
+    <div class="pair-list">${o.pair.map(p=>{const po=oils.find(x=>x.name===p);return po?`<span style="cursor:pointer;color:var(--sage-600);text-decoration:underline" onclick="openModal(${po.id})">${po.icon} ${p}</span>`:`${p}`}).join('、')}</div>
+    <div class="caution"><strong>⚠️ 注意事项：</strong>${o.caution}</div>
+  `;
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+
+// Blending tool
+function filterNote(note){
+  currentNoteFilter = note;
+  document.querySelectorAll('.ntab').forEach(t=>t.classList.remove('on'));
+  event.target.classList.add('on');
+  renderBlendOils();
+}
+function renderBlendOils(){
+  const filtered = oils.filter(o=>o.note===currentNoteFilter);
+  document.getElementById('blendOilList').innerHTML = filtered.map(o=>{
+    const sel = selectedOils.includes(o.id);
+    return `<div class="blend-oil-item${sel?' selected':''}" onclick="toggleOil(${o.id})">
+      <div class="dot" style="background:${noteColors[o.note]}"></div>
+      <span class="bname">${o.icon} ${o.name}</span>
+      <span class="bnote">${getChemById(o.chem).name}</span>
+    </div>`;
+  }).join('');
+}
+function toggleOil(id){
+  const idx = selectedOils.indexOf(id);
+  if(idx>-1) selectedOils.splice(idx,1); else if(selectedOils.length<6) selectedOils.push(id);
+  updateBlend();
+}
+function removeOil(id){
+  selectedOils.splice(selectedOils.indexOf(id),1);
+  updateBlend();
+}
+function updateBlend(){
+  renderBlendOils();
+  const sel = selectedOils.map(id=>oils.find(o=>o.id===id));
+  // Pyramid
+  const top = sel.filter(o=>o.note==='high');
+  const mid = sel.filter(o=>o.note==='mid');
+  const base = sel.filter(o=>o.note==='low');
+  document.getElementById('pyrTop').innerHTML = top.length ? top.map(o=>`<span style="font-size:12px;margin:0 2px">${o.icon}${o.name}</span>`).join(' ') : '<span class="pyr-empty">点击左侧选择</span>';
+  document.getElementById('pyrMid').innerHTML = mid.length ? mid.map(o=>`<span style="font-size:12px;margin:0 2px">${o.icon}${o.name}</span>`).join(' ') : '<span class="pyr-empty">点击左侧选择</span>';
+  document.getElementById('pyrBase').innerHTML = base.length ? base.map(o=>`<span style="font-size:12px;margin:0 2px">${o.icon}${o.name}</span>`).join(' ') : '<span class="pyr-empty">点击左侧选择</span>';
+  // Selected tags
+  document.getElementById('selectedOils').innerHTML = sel.length ? sel.map(o=>`<span class="sel-tag" style="border-color:${noteColors[o.note]};color:${noteColors[o.note]}">${o.icon} ${o.name}<span class="x" onclick="removeOil(${o.id})">×</span></span>`).join('') : '<span style="font-size:12px;color:var(--text3)">尚未选择精油</span>';
+  // Recipe
+  const recipeEl = document.getElementById('blendRecipe');
+  if(sel.length > 0){
+    const total = 6; // 10ml基础油最多6滴（2-3%浓度）
+    const perOil = Math.max(1, Math.floor(total / sel.length));
+    let remainder = total - perOil * sel.length;
+    recipeEl.style.display = 'block';
+    recipeEl.innerHTML = `<div style="font-size:12px;color:var(--text3);margin-bottom:12px">推荐加入10ml基础油中使用</div>` +
+      sel.map((o,i)=>{
+        const drops = perOil + (i < remainder ? 1 : 0);
+        return `<div class="recipe-row"><span class="rn">${o.icon} ${o.name}</span><span class="rd"></span><span class="rdrops">${drops} 滴 · ${noteNames[o.note]}</span></div>`;
+      }).join('');
+  } else {
+    recipeEl.style.display = 'none';
+  }
+  // Highlight recommended efficacy oils
+  document.querySelectorAll('.eff-oil').forEach(el=>{
+    const oid = parseInt(el.dataset.oid);
+    el.classList.toggle('rec', selectedOils.includes(oid));
+  });
+
+  // Generate aroma overview
+  generateAromaOverview(sel);
+}
+
+function generateAromaOverview(sel) {
+  const overviewEl = document.getElementById('aromaOverview');
+  const notesEl = document.getElementById('aromaNotes');
+  const descEl = document.getElementById('aromaDesc');
+
+  if (sel.length === 0) {
+    overviewEl.classList.remove('show');
+    return;
+  }
+
+  overviewEl.classList.add('show');
+
+  const top = sel.filter(o => o.note === 'high');
+  const mid = sel.filter(o => o.note === 'mid');
+  const base = sel.filter(o => o.note === 'low');
+
+  let notesHtml = '';
+  if (top.length > 0) {
+    notesHtml += `<div class="aroma-note-row"><span class="aroma-note-label top">前调</span><span class="aroma-note-names">${top.map(o => o.aroma).join('、')}</span></div>`;
+  }
+  if (mid.length > 0) {
+    notesHtml += `<div class="aroma-note-row"><span class="aroma-note-label mid">中调</span><span class="aroma-note-names">${mid.map(o => o.aroma).join('、')}</span></div>`;
+  }
+  if (base.length > 0) {
+    notesHtml += `<div class="aroma-note-row"><span class="aroma-note-label base">基调</span><span class="aroma-note-names">${base.map(o => o.aroma).join('、')}</span></div>`;
+  }
+  notesEl.innerHTML = notesHtml;
+
+  // Generate blended aroma description using actual aroma descriptors
+  let desc = '';
+  if (sel.length === 1) {
+    desc = `这是一款纯粹的${sel[0].aroma}，${sel[0].name}的单一日式香型，单纯而直接。`;
+  } else {
+    const topAromas = top.map(o => o.aroma);
+    const midAromas = mid.map(o => o.aroma);
+    const baseAromas = base.map(o => o.aroma);
+    const topNames = top.map(o => o.name);
+    const midNames = mid.map(o => o.name);
+    const baseNames = base.map(o => o.name);
+
+    // Full pyramid (top + mid + base)
+    if (top.length > 0 && mid.length > 0 && base.length > 0) {
+      const topStr = topAromas.join('与');
+      const midStr = midAromas.join('、');
+      const baseStr = baseAromas.join('与');
+      desc = `${topStr}的开场率先登场，带来清新的第一印象；随后${midStr}徐徐展开，赋予中段丰盈的层次感；最后${baseStr}作为底蕴收尾，留下悠长而深邃的余韵。三调层层递进，从明亮到温润再到深沉，浑然一体。`;
+    }
+    // Top + Mid only
+    else if (top.length > 0 && mid.length > 0) {
+      const topStr = topAromas.join('与');
+      const midStr = midAromas.join('、');
+      desc = `${topStr}点亮前调，带来跃动的开场；随后${midStr}作为主体承接，让香气更加丰盈饱满。整体偏轻盈灵动，留香以中调为主，适合日常使用。`;
+    }
+    // Mid + Base only
+    else if (mid.length > 0 && base.length > 0) {
+      const midStr = midAromas.join('、');
+      const baseStr = baseAromas.join('与');
+      desc = `${baseStr}深沉而温润的基调托底，${midStr}作为主体缓缓释放，构成圆润而持久的香气结构。整体偏向温暖沉稳，层次丰富而不过于跳跃。`;
+    }
+    // Top + Base only (interesting contrast)
+    else if (top.length > 0 && base.length > 0) {
+      const topStr = topAromas.join('与');
+      const baseStr = baseAromas.join('与');
+      desc = `${topStr}的清新开场与${baseStr}的深沉底蕴形成鲜明对比，香气从明亮跳跃直接过渡到深沉绵长，张力十足，独具个性。`;
+    }
+    // Top only
+    else if (top.length > 0) {
+      const topStr = topAromas.join('与');
+      desc = `${topStr}的组合轻盈明快，带来清新爽朗的开场感。香气直接、易散，适合追求清爽利落体验的时刻。`;
+    }
+    // Mid only
+    else if (mid.length > 0) {
+      const midStr = midAromas.join('与');
+      desc = `${midStr}构成了这个配方的香气主体，饱满圆润，温暖而亲和。香气持久稳定，适合作为日常香氛使用。`;
+    }
+    // Base only
+    else if (base.length > 0) {
+      const baseStr = baseAromas.join('与');
+      desc = `${baseStr}带来深沉悠长的香气底蕴，温暖而具有包裹感。香气持久不散，适合需要安定与庇护感的情境。`;
+    }
+  }
+  descEl.textContent = desc;
+}
+
+// Efficacy panel
+document.getElementById('effCategories').innerHTML = effCategories.map(cat=>`
+  <div class="eff-cat">
+    <h4>${cat.name}</h4>
+    <div class="eff-oils">${cat.oils.map(oid=>{const o=oils.find(x=>x.id===oid);return `<span class="eff-oil" data-oid="${oid}" onclick="addFromEff(${oid})">${o.icon} ${o.name}</span>`}).join('')}</div>
+  </div>
+`).join('');
+
+function addFromEff(id){
+  if(!selectedOils.includes(id) && selectedOils.length < 6){
+    selectedOils.push(id);
+    updateBlend();
+  }
+}
+
+// === 芳香搭配推荐（按功效分类·16款）===
+const recBlends = [
+  // 🌙 助眠安神 (3)
+  {
+    id:'sleep', icon:'🌙', name:'晚安安睡', desc:'经典助眠黄金组合',
+    category:'sleep', color:'#7c5cbf', oils:[9,33,17], tags:['助眠','镇静','舒缓'],
+    tip:'睡前30分钟扩香，营造宁静入眠氛围'
+  },
+  {
+    id:'deepcalm', icon:'🌊', name:'深度放松', desc:'岩兰草扎根之力',
+    category:'sleep', color:'#4527a0', oils:[20,34,22], tags:['深度镇静','抗焦虑','冥想'],
+    tip:'极度焦虑或失眠时扩香，让根系力量带你回到大地'
+  },
+  {
+    id:'meditation', icon:'🧘', name:'花香冥想', desc:'冥想静心芳香仪式',
+    category:'sleep', color:'#5c6bc0', oils:[3,54,22], tags:['冥想','安神','优雅'],
+    tip:'瑜伽或冥想时扩香，帮助进入深度放松状态'
+  },
+  // ☀️ 提神醒脑 (2)
+  {
+    id:'energy', icon:'☀️', name:'元气唤醒', desc:'提神醒脑活力配方',
+    category:'energy', color:'#e67e22', oils:[1,39,42], tags:['提神','集中','清新'],
+    tip:'晨间扩香15分钟，开启元气满满的一天'
+  },
+  {
+    id:'focusmax', icon:'🎯', name:'专注力MAX', desc:'深度工作专注组合',
+    category:'energy', color:'#d35400', oils:[35,4,6], tags:['专注','思维清晰','提神'],
+    tip:'工作学习时扩香，保持高度集中的心流状态'
+  },
+  // 💨 呼吸顺畅 (2)
+  {
+    id:'breath', icon:'🌿', name:'呼吸顺畅', desc:'呼吸道守护组合',
+    category:'resp', color:'#43a047', oils:[38,10,9], tags:['通鼻','抗菌','呼吸道'],
+    tip:'换季或感冒初期扩香，保持呼吸通畅'
+  },
+  {
+    id:'fluguard', icon:'🛡️', name:'流感防护', desc:'抗病毒免疫防线',
+    category:'resp', color:'#2e7d32', oils:[56,38,1], tags:['抗病毒','增强免疫','净化'],
+    tip:'流感季节每日扩香，罗文莎叶是天然的病毒克星'
+  },
+  // 😊 情绪调节 (2)
+  {
+    id:'happysun', icon:'😊', name:'快乐阳光', desc:'驱散阴霾的快乐配方',
+    category:'mood', color:'#f39c12', oils:[2,3,53], tags:['抗抑郁','愉悦','温暖'],
+    tip:'情绪低落时扩香，三款阳光精油联手驱散灰色心情'
+  },
+  {
+    id:'balance', icon:'⚖️', name:'情绪平衡', desc:'荷尔蒙情绪稳定器',
+    category:'mood', color:'#e91e63', oils:[12,9,2], tags:['平衡','安稳','温柔'],
+    tip:'经前或情绪起伏时扩香，天竺葵帮你找回内在平衡'
+  },
+  // 💪 疼痛舒缓 (2)
+  {
+    id:'pain', icon:'💪', name:'酸痛舒缓', desc:'肌肉放松舒缓配方',
+    category:'pain', color:'#e74c3c', oils:[42,15,17], tags:['舒缓','镇痛','暖身'],
+    tip:'混合基础油后局部按摩，运动后使用效果更佳'
+  },
+  {
+    id:'muscle', icon:'🔥', name:'肌肉放松', desc:'深层温热放松组合',
+    category:'pain', color:'#c0392b', oils:[39,15,5], tags:['促循环','缓解僵硬','暖身'],
+    tip:'运动前按摩暖身或运动后放松，黑胡椒带来深层温热'
+  },
+  // ✨ 护肤美容 (2)
+  {
+    id:'antiage', icon:'✨', name:'逆龄焕肤', desc:'顶级抗衰老精华',
+    category:'skincare', color:'#8e24aa', oils:[17,51,37], tags:['抗衰老','修复','光泽'],
+    tip:'混合基础油（如玫瑰果油）作为面部精华，每周2-3次'
+  },
+  {
+    id:'clearskin', icon:'💧', name:'净颜控油', desc:'油痘肌日常调理',
+    category:'skincare', color:'#00897b', oils:[10,9,21], tags:['祛痘','控油','平衡'],
+    tip:'点涂痘痘或混合芦荟胶做面膜，茶树+广藿香双效控油'
+  },
+  // 🌸 女性调理 (2)
+  {
+    id:'cycle', icon:'🌸', name:'经期温暖', desc:'缓解经痛安抚情绪',
+    category:'women', color:'#ec407a', oils:[34,12,33], tags:['缓解经痛','调节周期','安抚'],
+    tip:'经前一周开始扩香或按摩腹部，三款温和精油协同呵护'
+  },
+  {
+    id:'hormone', icon:'🌺', name:'荷尔蒙平衡', desc:'内分泌温柔调理',
+    category:'women', color:'#ad1457', oils:[7,12,46], tags:['内分泌','循环','平衡'],
+    tip:'每周3次扩香或泡澡，丝柏+天竺葵是经典女性调理搭档'
+  },
+  // 🍽️ 消化助益 (1)
+  {
+    id:'digest', icon:'🍽️', name:'餐后舒适', desc:'消胀暖胃舒缓配方',
+    category:'digest', color:'#6d4c41', oils:[46,42,1], tags:['助消化','消胀','暖胃'],
+    tip:'大餐后扩香或稀释按摩腹部，甜茴香是胀气的天然克星'
+  }
+];
+
+const recCategories = [
+  {id:'sleep', label:'🌙 助眠安神', color:'#7c5cbf'},
+  {id:'energy', label:'☀️ 提神醒脑', color:'#e67e22'},
+  {id:'resp', label:'💨 呼吸顺畅', color:'#43a047'},
+  {id:'mood', label:'😊 情绪调节', color:'#f39c12'},
+  {id:'pain', label:'💪 疼痛舒缓', color:'#e74c3c'},
+  {id:'skincare', label:'✨ 护肤美容', color:'#8e24aa'},
+  {id:'women', label:'🌸 女性调理', color:'#ec407a'},
+  {id:'digest', label:'🍽️ 消化助益', color:'#6d4c41'}
+];
+
+let currentRecFilter = 'all';
+
+function filterRecCategory(cat){
+  currentRecFilter = cat;
+  document.querySelectorAll('.bfilter-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelector(`.bfilter-btn-${cat}`).classList.add('on');
+  renderRecBlends();
+}
+
+function getOilById(id){ return oils.find(o=>o.id===id); }
+
+function getRecAromaHtml(oilIds) {
+  const sel = oilIds.map(id => getOilById(id)).filter(Boolean);
+  if (sel.length === 0) return '';
+  const top = sel.filter(o => o.note === 'high');
+  const mid = sel.filter(o => o.note === 'mid');
+  const base = sel.filter(o => o.note === 'low');
+  let notesHtml = '';
+  if (top.length > 0) {
+    notesHtml += `<div class="blend-rec-aroma-row"><span class="blend-rec-aroma-label top">前调</span><span class="blend-rec-aroma-names">${top.map(o => o.aroma).join('、')}</span></div>`;
+  }
+  if (mid.length > 0) {
+    notesHtml += `<div class="blend-rec-aroma-row"><span class="blend-rec-aroma-label mid">中调</span><span class="blend-rec-aroma-names">${mid.map(o => o.aroma).join('、')}</span></div>`;
+  }
+  if (base.length > 0) {
+    notesHtml += `<div class="blend-rec-aroma-row"><span class="blend-rec-aroma-label base">基调</span><span class="blend-rec-aroma-names">${base.map(o => o.aroma).join('、')}</span></div>`;
+  }
+  const topAromas = top.map(o => o.aroma);
+  const midAromas = mid.map(o => o.aroma);
+  const baseAromas = base.map(o => o.aroma);
+  let desc = '';
+  if (sel.length === 1) {
+    desc = `纯粹的${sel[0].aroma}，${sel[0].name}的单一香型，简洁而直接。`;
+  } else if (top.length > 0 && mid.length > 0 && base.length > 0) {
+    desc = `${topAromas.join('与')}的开场率先登场，带来清新的第一印象；随后${midAromas.join('、')}徐徐展开，赋予中段丰盈的层次感；最后${baseAromas.join('与')}作为底蕴收尾，留下悠长而深邃的余韵。三调层层递进，浑然一体。`;
+  } else if (top.length > 0 && mid.length > 0) {
+    desc = `${topAromas.join('与')}点亮前调，带来跃动的开场；随后${midAromas.join('、')}作为主体承接，让香气更加丰盈饱满。整体偏轻盈灵动，适合日常使用。`;
+  } else if (mid.length > 0 && base.length > 0) {
+    desc = `${baseAromas.join('与')}深沉而温润的基调托底，${midAromas.join('、')}作为主体缓缓释放，构成圆润而持久的香气结构。整体偏向温暖沉稳。`;
+  } else if (top.length > 0 && base.length > 0) {
+    desc = `${topAromas.join('与')}的清新开场与${baseAromas.join('与')}的深沉底蕴形成鲜明对比，香气从明亮跳跃直接过渡到深沉绵长，张力十足。`;
+  } else if (top.length > 0) {
+    desc = `${topAromas.join('与')}的组合轻盈明快，带来清新爽朗的开场感，适合追求清爽利落体验的时刻。`;
+  } else if (mid.length > 0) {
+    desc = `${midAromas.join('与')}构成香气主体，饱满圆润，温暖而亲和。香气持久稳定，适合作为日常香氛使用。`;
+  } else {
+    desc = `${baseAromas.join('与')}带来深沉悠长的香气底蕴，温暖而具有包裹感，适合需要安定感的情境。`;
+  }
+  return `<div class="blend-rec-aroma">
+    <div class="blend-rec-aroma-title">🌸 香气概述</div>
+    <div class="blend-rec-aroma-notes">${notesHtml}</div>
+    <div class="blend-rec-aroma-desc">${desc}</div>
+  </div>`;
+}
+
+function renderRecBlends(){
+  let html = '';
+  const cats = currentRecFilter === 'all' ? recCategories : recCategories.filter(c=>c.id===currentRecFilter);
+  cats.forEach(cat=>{
+    const catBlends = recBlends.filter(b=>b.category===cat.id);
+    if(catBlends.length===0) return;
+    html += `<div class="blend-rec-cat fade-in">
+      <div class="blend-rec-cat-name">
+        <span class="blend-rec-cat-dot" style="background:${cat.color}"></span>
+        ${cat.label}
+        <span>${catBlends.length}款搭配</span>
+      </div>
+    </div>`;
+    html += catBlends.map(b=>{
+      const oilCards = b.oils.map(oid=>{
+        const o = getOilById(oid);
+        if(!o) return '';
+        return `<span class="blend-rec-oil" style="border-color:${noteColors[o.note]}20;color:${noteColors[o.note]}">${o.icon} ${o.name}<span style="font-size:10px;opacity:.6">${noteNames[o.note]}</span></span>`;
+      }).join('');
+      const tagHtml = b.tags.map(t=>`<span class="blend-rec-tag">${t}</span>`).join('');
+      const aromaHtml = getRecAromaHtml(b.oils);
+      return `<div class="blend-rec-card fade-in">
+        <div class="blend-rec-header">
+          <div class="blend-rec-ico" style="background:${b.color}18">${b.icon}</div>
+          <div class="blend-rec-info">
+            <div class="blend-rec-name">${b.name}</div>
+            <div class="blend-rec-sub">${b.desc}</div>
+          </div>
+        </div>
+        <div class="blend-rec-oils">${oilCards}</div>
+        ${aromaHtml}
+        <div class="blend-rec-bot" style="margin-top:14px">
+          <div class="blend-rec-tags">${tagHtml}</div>
+          <button class="blend-rec-btn" id="recBtn-${b.id}" onclick="addBlendToMixer('${b.id}')">➕ 添加到调香</button>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-top:10px;font-style:italic">💡 ${b.tip}</div>
+      </div>`;
+    }).join('');
+  });
+  document.getElementById('blendRecGrid').innerHTML = html;
+  // Re-scan fade-in elements so new cards become visible
+  observeFade();
+}
+
+function addBlendToMixer(blendId){
+  const blend = recBlends.find(b=>b.id===blendId);
+  if(!blend) return;
+  // Clear current selection
+  selectedOils = [];
+  blend.oils.forEach(oid=>{
+    selectedOils.push(oid);
+  });
+  updateBlend();
+  // Scroll to blending tool
+  document.getElementById('blend').scrollIntoView({behavior:'smooth',block:'start'});
+  // Flash button feedback
+  const btn = document.getElementById('recBtn-'+blendId);
+  if(btn){
+    btn.textContent = '✅ 已添加';
+    btn.classList.add('added');
+    setTimeout(()=>{
+      btn.textContent = '➕ 添加到调香';
+      btn.classList.remove('added');
+    },2000);
+  }
+}
+
+// Init
+renderOils();
+renderBlendOils();
+updateBlend();
+renderRecBlends();
+
+// Fade-in observer
+function observeFade(){
+  const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+}
+observeFade();
+
+// Header scroll
+window.addEventListener('scroll',()=>document.getElementById('header').classList.toggle('scrolled',window.scrollY>10));
+</script>
+</body>
+</html>
